@@ -18,6 +18,13 @@ public class CheckersGameModel {
     }
 
 
+    public void startGame()
+    {
+        setUpGameBoard();
+        setUpCheckerPositions();
+    }
+
+
     //sets up all of the white and black spaces on the checker board
     public void setUpGameBoard()
     {
@@ -36,6 +43,14 @@ public class CheckersGameModel {
     //sets up the default positions of the player pieces
     public void setUpCheckerPositions()
     {
+        int count = 0;
 
+        for (int i = 0; i < BOARD_SIZE; ++i)
+        {
+            for (int j = 0; j < BOARD_SIZE; ++j)
+            {
+
+            }
+        }
     }
 }
