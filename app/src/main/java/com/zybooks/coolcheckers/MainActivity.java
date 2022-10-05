@@ -17,7 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null)
         {
-            mGame.startGame();
+            startGame();
         }
+    }
+
+    public void startGame()
+    {
+        mGame.newGame();
     }
 }

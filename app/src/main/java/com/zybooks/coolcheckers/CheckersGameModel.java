@@ -18,7 +18,7 @@ public class CheckersGameModel {
     }
 
 
-    public void startGame()
+    public void newGame()
     {
         setUpGameBoard();
         setUpCheckerPositions();
