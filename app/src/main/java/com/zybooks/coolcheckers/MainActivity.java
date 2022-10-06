@@ -3,10 +3,14 @@ package com.zybooks.coolcheckers;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.GridLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    public CheckersGameModel mGame;
+    private CheckersGameModel mGame;
+    private GridLayout mCheckerBoard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,14 +19,31 @@ public class MainActivity extends AppCompatActivity {
 
         mGame = new CheckersGameModel();
 
-        if (savedInstanceState == null)
-        {
-            startGame();
+        mCheckerBoard = findViewById(R.id.CheckerGameBoard);
+
+        // Add the same click handler to all grid buttons
+        for (int i = 0; i < mCheckerBoard.getChildCount(); i++) {
+            Button gridButton = (Button) mCheckerBoard.getChildAt(i);
+            gridButton.setOnClickListener(this::onBoardSpaceClick);
+
+            if (savedInstanceState == null) {
+                startGame();
+            }
         }
     }
 
-    public void startGame()
+    private void onBoardSpaceClick(View view)
+    {
+
+    }
+
+
+    //starts the game
+    private void startGame()
     {
         mGame.newGame();
     }
+
+
+
 }

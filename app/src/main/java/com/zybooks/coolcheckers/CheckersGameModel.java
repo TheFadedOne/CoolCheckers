@@ -3,11 +3,13 @@ package com.zybooks.coolcheckers;
 
 public class CheckersGameModel {
 
+
+
     public enum checkers {PLAYER1, PLAYER2, PLAYER1_KING, PLAYER2_KING};
     public enum spaceType {WHITE_SPACE, BLACK_SPACE};
     public spaceType[][] mGameBoard;
     public checkers[][] mCheckerPositions;
-    public final int BOARD_SIZE = 8;
+    public static final int BOARD_SIZE = 8;
 
 
     //constructor
