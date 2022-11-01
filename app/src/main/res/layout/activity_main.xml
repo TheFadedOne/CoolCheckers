@@ -7,6 +7,17 @@
     tools:context=".MainActivity"
     tools:visibility="visible">
 
+    <ImageView
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:src="@drawable/checkerboard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
     <GridLayout
         android:id="@+id/CheckerGameBoard"
         android:layout_width="wrap_content"
@@ -18,9 +29,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            style="@style/BoardPositionButton"
-            app:iconPadding="0dp" />
+        <Button style="@style/BoardPositionButton" />
 
         <Button style="@style/BoardPositionButton" />
 
@@ -149,5 +158,7 @@
         <Button style="@style/BoardPositionButton" />
 
     </GridLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
