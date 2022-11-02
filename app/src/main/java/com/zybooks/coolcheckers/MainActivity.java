@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void onBoardSpaceClick(View view)
     {
-
+        Toast.makeText(MainActivity.this, "Button click", Toast.LENGTH_LONG).show();
     }
 
 
