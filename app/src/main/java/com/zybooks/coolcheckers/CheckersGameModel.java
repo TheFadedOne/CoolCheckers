@@ -15,7 +15,7 @@ public class CheckersGameModel {
     public CheckersGameModel()
     {
         mGameBoard = new spaceType[BOARD_SIZE][BOARD_SIZE];
-        checkers = ;
+        
     }
 
 
