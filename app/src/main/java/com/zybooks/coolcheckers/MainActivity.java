@@ -25,21 +25,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        //DisplayMetrics metrics = new DisplayMetrics();
+        //getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        /*
         int h = metrics.heightPixels;
         int w = metrics.widthPixels;
         System.out.println(h);
         System.out.println(w);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         GamePiece all_pieces[] = new GamePiece[24];
 
         for (int i = 0; i < 12; i++) {
             all_pieces[i] = board.black_pieces[i];
             all_pieces[i+12] = board.red_pieces[i];
         }
+        */
 
         mGame = new CheckersGameModel();
 
@@ -51,23 +53,38 @@ public class MainActivity extends AppCompatActivity {
             gridButton.setOnClickListener(this::onBoardSpaceClick);
 
             if (savedInstanceState == null) {
-                startGame();
+                setupGame();
+                playGame();
             }
         }
     }
 
     private void onBoardSpaceClick(View view)
     {
-        Toast.makeText(MainActivity.this, "Button click", Toast.LENGTH_LONG).show();
+        Context context = getApplicationContext();
+        CharSequence text = "Hello toast!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
 
     //starts the game
-    private void startGame()
+    private void setupGame()
     {
         mGame.newGame();
+
     }
 
+
+    public void playGame()
+    {
+      //  while(mGame.checkGameOver() == false)
+        {
+
+        }
+    }
 
 
 }
