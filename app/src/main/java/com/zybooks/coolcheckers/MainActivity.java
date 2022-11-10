@@ -25,21 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-        int h = metrics.heightPixels;
-        int w = metrics.widthPixels;
-        System.out.println(h);
-        System.out.println(w);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        GamePiece all_pieces[] = new GamePiece[24];
+        // GamePiece all_pieces[] = new GamePiece[24];
 
-        for (int i = 0; i < 12; i++) {
+        /* for (int i = 0; i < 12; i++) {
             all_pieces[i] = board.black_pieces[i];
             all_pieces[i+12] = board.red_pieces[i];
-        }
+        } */
 
         mGame = new CheckersGameModel();
 

@@ -15,14 +15,13 @@ public class CheckersGameModel {
     public CheckersGameModel()
     {
         mGameBoard = new spaceType[BOARD_SIZE][BOARD_SIZE];
-        
     }
 
 
     public void newGame()
     {
         setUpGameBoard();
-        setUpCheckerPositions();
+        setUpPiecePositions();
     }
 
 
@@ -40,9 +39,8 @@ public class CheckersGameModel {
         }
     }
 
-
     //sets up the default positions of the player pieces
-    public void setUpCheckerPositions()
+    public void setUpPiecePositions()
     {
         int count = 0;
 
