@@ -36,12 +36,20 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(w);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        GamePiece all_pieces[] = new GamePiece[24];
-
+        GamePieces all_pieces[] = new GamePieces[24];
         for (int i = 0; i < 12; i++) {
             all_pieces[i] = board.black_pieces[i];
             all_pieces[i+12] = board.red_pieces[i];
         }
+        String myvec[] = new String[64];
+        myvec = board.vec_string();
+        gridView = (GridView) findViewById(R.id.gridview);
+        gridView.setAdapter(new ImageAdapter(this, myvec));
+        Context context = getApplicationContext();
+        CharSequence text = "Red Player Starts!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
 
         mGame = new CheckersGameModel();
 

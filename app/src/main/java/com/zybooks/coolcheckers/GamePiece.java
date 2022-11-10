@@ -1,42 +1,68 @@
 package com.zybooks.coolcheckers;
 
-public class GamePiece {
+public class GamePieces {
 
-    public enum pieceColor {BLACK, RED};
-    public pieceColor mPieceColor;
+    public boolean dark;
     public boolean crowned;
     public boolean captured;
-    public int xPosition;
-    public int yPosition;
+    public CheckersGameModel position = new CheckersGameModel();
 
+    public static CheckersGameModel[] push_back(CheckersGameModel[] array, CheckersGameModel push) {
+        int count = 0;
+        for(CheckersGameModel x : array) {
+            count++;
+        }
+        CheckersGameModel[] longer = new CheckersGameModel[count + 1];
+            for(int i = 0; i < count; i++){
+                longer[i] = array[i];
+                longer[count] = push;
+                return longer;
+            }
+    }
 
+    public String toString() {
+        String str = new String();
+        if (this.crowned == false) {
+            if (this.dark == false) {
+                str = "r";
+            } else {
+                str = "b";
+            }
+        } else {
+            if (this.dark == false) {
+                str = "R";
+            } else {
+                str = "B";
+            }
+        }
+        return str;
+    }
 
-    public GamePiece(pieceColor type, int x, int y) {
+    public GamePieces() {
         crowned = false;
         captured = false;
-        mPieceColor = type;
-        xPosition = x;
-        yPosition = y;
+        dark = false;
+        position.row = 0;
+        position.col = 0;
     }
 
     public void piece_print() {
         if (this.crowned == false) {
-            if (mPieceColor == pieceColor.RED) {
-                System.out.print("red");
+            if (this.dark == false) {
+                System.out.print("r");
             } else {
-                System.out.print("black");
+                System.out.print("b");
             }
         } else {
-            if (mPieceColor == pieceColor.RED) {
-                System.out.print("RED");
+            if (this.dark == false) {
+                System.out.print("R");
             } else {
-                System.out.print("BLACK");
+                System.out.print("B");
             }
         }
         return;
     }
 
-    /*
     public CheckersGameModel[]
     piece_positions_in_direction(int dir) {
         GamePieces gp1 = new GamePieces();
@@ -105,7 +131,5 @@ public class GamePiece {
         }
         return v_out_pos;
     }
-
-     */
 
 }
