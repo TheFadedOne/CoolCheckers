@@ -18,9 +18,6 @@ import java.util.ConcurrentModificationException;
 
 public class MainActivity extends AppCompatActivity {
 
-    int switcher = 1;
-    String click_move = "empty";
-    GridView gridView;
     CheckersGameModel board = new CheckersGameModel();
     private CheckersGameModel mGame;
     private GridLayout mCheckerBoard;
