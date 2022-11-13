@@ -10,7 +10,6 @@ public class GamePiece {
     public int yPosition;
 
 
-
     public GamePiece(pieceColor type, int x, int y) {
         crowned = false;
         captured = false;

@@ -1,12 +1,13 @@
 package com.zybooks.coolcheckers;
 
-
 public class CheckersGameModel {
 
+    public GamePiece[] black_pieces;
+    public GamePiece[] red_pieces;
 
     public enum spaceType {WHITE_SPACE, BLACK_SPACE};
     public spaceType[][] mGameBoard;
-    public checkers[][] mGamePieces;
+    public GamePiece[][] mGamePieces;
     public static final int BOARD_SIZE = 8;
 
 
@@ -14,14 +15,13 @@ public class CheckersGameModel {
     public CheckersGameModel()
     {
         mGameBoard = new spaceType[BOARD_SIZE][BOARD_SIZE];
-        checkers = new ;
     }
 
 
     public void newGame()
     {
         setUpGameBoard();
-        setUpCheckerPositions();
+        setUpPiecePositions();
     }
 
 
@@ -39,9 +39,8 @@ public class CheckersGameModel {
         }
     }
 
-
     //sets up the default positions of the player pieces
-    public void setUpCheckerPositions()
+    public void setUpPiecePositions()
     {
         int count = 0;
 
