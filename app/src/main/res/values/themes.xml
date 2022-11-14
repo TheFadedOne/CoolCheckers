@@ -17,7 +17,11 @@
     <style name="BoardPositionButton">
         <item name="android:layout_width">45dp</item>
         <item name="android:layout_height">45dp</item>
-        <item name="android:backgroundTint">@color/transparent_red</item>
+    </style>
+
+    <style name="BoardSpace">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">45dp</item>
     </style>
 
 

@@ -9,8 +9,6 @@ public class GamePiece {
     public int xPosition;
     public int yPosition;
 
-
-
     public GamePiece(pieceColor type, int x, int y) {
         crowned = false;
         captured = false;
@@ -19,7 +17,7 @@ public class GamePiece {
         yPosition = y;
     }
 
-    public void piece_print() {
+    public void printPiece() {
         if (this.crowned == false) {
             if (mPieceColor == pieceColor.RED) {
                 System.out.print("red");
@@ -33,7 +31,7 @@ public class GamePiece {
                 System.out.print("BLACK");
             }
         }
-        return;
+        System.out.println("Position (x: " + xPosition + "  y: " + yPosition);
     }
 
     /*
