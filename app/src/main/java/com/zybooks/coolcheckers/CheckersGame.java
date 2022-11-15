@@ -20,14 +20,14 @@ public class CheckersGame {
 
     public void newGame()
     {
-       setUpPieces();
-       //printPieces();
+       setupPieces();
     }
 
 
     //sets up the default positions of the player pieces
-    public void setUpPieces()
+    public void setupPieces()
     {
+        int pieceCounter = 0;
         int rx;
         int ry = 1;
         //sets up red pieces at the top
@@ -36,8 +36,9 @@ public class CheckersGame {
             if (i == 2) {rx = 2;} else {rx = 1;}
             for (int j = 1; j <= 4; ++j)
             {
-                mGamePieces[i] = new GamePiece(GamePiece.pieceColor.RED, rx, ry);
+                mGamePieces[pieceCounter] = new GamePiece(GamePiece.pieceColor.RED, rx, ry);
                 rx+=2;
+                pieceCounter++;
             }
             ry+=1;
         }
@@ -50,8 +51,9 @@ public class CheckersGame {
             if (i == 2) {bx = 7;} else {bx = 8;}
             for (int j = 1; j <= 4; ++j)
             {
-                mGamePieces[i] = new GamePiece(GamePiece.pieceColor.BLACK, bx, by);
-                by-=2;
+                mGamePieces[pieceCounter] = new GamePiece(GamePiece.pieceColor.BLACK, bx, by);
+                bx-=2;
+                pieceCounter++;
             }
 
             by-=1;
@@ -72,7 +74,7 @@ public class CheckersGame {
         for (int i = 0; i < 24; ++i)
         {
             mGamePieces[i].printPiece();
-            Log.println(Log.DEBUG,"fun", "Your message to print");
+
         }
 
     }
