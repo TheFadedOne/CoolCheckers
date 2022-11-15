@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     GridView gridView;
     CheckersGame board = new CheckersGame();
     private CheckersGame mGame;
+    public GamePiece[] copyGamePieces;
     private GridLayout mCheckerBoard;
 
     @Override
