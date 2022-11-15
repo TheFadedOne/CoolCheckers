@@ -34,31 +34,9 @@ public class GamePiece {
         System.out.println("Position (x: " + xPosition + "  y: " + yPosition);
     }
 
+
+
     /*
-    public CheckersGameModel[]
-    piece_positions_in_direction(int dir) {
-        GamePieces gp1 = new GamePieces();
-        GamePieces gp2 = new GamePieces();
-
-        GamePieces[] v_out = new GamePieces[0];
-        GamePieces[] v_out_pos = new GamePieces[0];
-        boolean dark = this.dark;
-        boolean crowned = this.crowned;
-        boolean pass = false;
-
-        if (crowned == true) {
-            pass = true;
-        } else {
-            if (dir == 0 && dark == true) {
-                pass = true;
-            } else if (dir == 1 && dark == true) {
-                pass = true;
-            } else if (dir == 2 && dark == true) {
-                pass = true;
-            } else if (dir == 3 && dark == true) {
-                pass = true;
-            }
-        }
 
         if (pass == true) {
             if (dir == 0) {
