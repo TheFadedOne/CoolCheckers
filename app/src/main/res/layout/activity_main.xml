@@ -371,6 +371,27 @@
     <ImageView
         android:layout_width="45dp"
         android:layout_height="45dp"
+
+    </ImageView>
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/redpieceking"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.205">
+
+    </ImageView>
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+>>>>>>> 6a66f5dbd6b272054a56a5fb504f87652ab5f293
         android:src="@drawable/redpiece"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -449,7 +470,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.73">
-
     </ImageView>
 
     <GridLayout
@@ -465,7 +485,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547"
+
+        app:layout_constraintVertical_bias="0.478"
+
         tools:visibility="invisible">
 
 
