@@ -68,30 +68,6 @@ public class CheckersGame {
             y+=1;
         }
 
-    	/*
-    	int spaceCounter = 0;
-    	int x;
-    	int y = 1;
-    	for (int i = 1; i <= 8; ++i)
-    	{
-    		if (i % 2 == 1) {x = 1;} else {x = 2;}
-    		for (int j = 1; j <= 8; ++j)
-    		{
-    			if (spaceCounter % 2 == 0)
-    			{
-    				mBoardSpaces[spaceCounter] = new BoardSpace(spaceType.BLACK, x, y);
-    			}
-    			else
-    			{
-    				mBoardSpaces[spaceCounter] = new BoardSpace(spaceType.WHITE, x, y);
-    			}
-    			mBoardSpaces[spaceCounter].printSpace();
-    			++x;
-    			++spaceCounter;
-    		}
-    		++y;
-    	}
-    	*/
     }
 
     /*
