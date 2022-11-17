@@ -8,6 +8,87 @@
     tools:context=".MainActivity"
     tools:visibility="visible">
 
+    //layout version with horizontal buttons
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/space_00"
+            android:tag="space_00"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/space_01"
+            android:tag="space_01"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="60sp"/>
+
+        <Button
+            android:id="@+id/space_02"
+            android:tag="space_02"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="60sp"/>
+
+        <Button
+            android:id="@+id/space_03"
+            android:tag="space_03"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="60sp"/>
+
+        <Button
+            android:id="@+id/space_04"
+            android:tag="space_04"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="60sp"/>
+
+        <Button
+            android:id="@+id/space_05"
+            android:tag="space_05"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="60sp"/>
+
+        <Button
+            android:id="@+id/space_06"
+            android:tag="space_06"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="60sp"/>
+
+        <Button
+            android:id="@+id/space_07"
+            android:tag="space_07"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="60sp"/>
+    </LinearLayout>
+
     <ImageView
         android:layout_width="360dp"
         android:layout_height="360dp"
@@ -277,34 +358,6 @@
     <ImageView
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:src="@drawable/blackpieceking"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpieceking"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
         android:src="@drawable/redpiece"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -404,6 +457,5 @@
 
 
     </GridLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

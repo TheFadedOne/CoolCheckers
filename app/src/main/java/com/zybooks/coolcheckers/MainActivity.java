@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.util.DisplayMetrics;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.GridView;
@@ -21,10 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
