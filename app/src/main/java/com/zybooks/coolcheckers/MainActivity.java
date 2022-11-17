@@ -12,13 +12,17 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static CheckersGame mGame;
     int switcher = 1;
     String click_move = "empty";
     GridView gridView;
     CheckersGame board = new CheckersGame();
-    private CheckersGame mGame;
     public GamePiece[] copyGamePieces;
     private GridLayout mCheckerBoard;
+    public static GamePiece[] mPieces;
+    public static BoardSpace[] mBoardSpaces;
+    public static boolean gameOver;
+    public static playerTurn mPlayerTurn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         mCheckerBoard = findViewById(R.id.CheckerGameBoard);
 
-        // Add the same click handler to all grid buttons
-        for (int i = 0; i < mCheckerBoard.getChildCount(); i++) {
-            Button gridButton = (Button) mCheckerBoard.getChildAt(i);
-            gridButton.setOnClickListener(this::onBoardSpaceClick);
-        }
+
 
 
     }
@@ -55,9 +55,28 @@ public class MainActivity extends AppCompatActivity {
     //starts the game
     private void startGame()
     {
+        mGame = new CheckersGame();
+        mPieces = new GamePiece[24];
+        gameOver = false;
+
         mGame.newGame();
+        mPieces = mGame.getPieces();
+        mBoardSpaces = mGame.getBoardSpaces();
+        mPlayerTurn = playerTurn.BLACK;
+
+        mPieces[6].printPiece();
+        playGame();
     }
 
-
+    /*
+     * game loop. game does not end until a player does not have any remaining pieces.
+     */
+    public static void playGame()
+    {
+        while (gameOver == false)
+        {
+            mPieces = mGame.move(mPlayerTurn, mPieces, mPieces[7], mBoardSpaces[8]);
+        }
+    }
 
 }
