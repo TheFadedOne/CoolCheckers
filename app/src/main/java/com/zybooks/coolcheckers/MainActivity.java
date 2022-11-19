@@ -33,10 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         startGame();
 
-
         mCheckerBoard = findViewById(R.id.CheckerGameBoard);
-
-
 
 
     }
@@ -47,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //starts the game
-    private void startGame()
+    /*
+     * initial setup for the game
+     */
+    public static void startGame()
     {
         mGame = new CheckersGame();
         mPieces = new GamePiece[24];
@@ -57,9 +56,8 @@ public class MainActivity extends AppCompatActivity {
         mGame.newGame();
         mPieces = mGame.getPieces();
         mBoardSpaces = mGame.getBoardSpaces();
-        mPlayerTurn = playerTurn.BLACK;
+        mPlayerTurn = playerTurn.RED;
 
-        mPieces[6].printPiece();
         playGame();
     }
 
@@ -70,8 +68,70 @@ public class MainActivity extends AppCompatActivity {
     {
         while (gameOver == false)
         {
-            mPieces = mGame.move(mPlayerTurn, mPieces, mPieces[7], mBoardSpaces[8]);
+            printPieces();
+
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(4, 4));
+            mPieces = mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(6, 6), getBoardSpaceWithPosition(5, 5));
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(4, 4), getBoardSpaceWithPosition(6, 6));
+
+            printPieces();
+
+            gameOver = true;
         }
     }
 
+    /*
+     * returns a GamePiece within the mPieces array that corresponds with the
+     * coordinates of the button pressed.
+     * If the coordinates of the button pressed do not correspond with an actual piece within the array
+     * then will return a null GamePiece which will tell the CheckersGame model class that
+     * no real piece has been selected.
+     */
+    public static GamePiece getPieceWithPosition(int x, int y)
+    {
+        GamePiece selectedPiece = null;
+
+        for (int i = 0; i < 24; ++i)
+        {
+            if (mPieces[i].getX() == x && mPieces[i].getY() == y)
+            {
+                selectedPiece = mPieces[i];
+            }
+        }
+
+        return selectedPiece;
+    }
+
+    /*
+     * has similar function to the 'getPieceWithPosition' method, except for Board Spaces
+     */
+    public static BoardSpace getBoardSpaceWithPosition(int x, int y)
+    {
+        BoardSpace selectedSpace = null;
+
+        for (int i = 0; i < 64; ++i)
+        {
+            if (mBoardSpaces[i].getX() == x && mBoardSpaces[i].getY() == y)
+            {
+                selectedSpace = mBoardSpaces[i];
+            }
+        }
+
+        return selectedSpace;
+    }
+
+    /*
+     * prints all of the pieces
+     */
+    public static void printPieces()
+    {
+        for (int i = 0; i < 24; ++i)
+        {
+            System.out.print("Piece #" + i + " === ");
+            mPieces[i].printPiece();
+
+        }
+        System.out.println();
+
+    }
 }

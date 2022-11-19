@@ -11,7 +11,7 @@ public class CheckersGame {
     public static final int PIECE_AMOUNT = 24;
 
 
-    //constructor
+    //Constructor
     public CheckersGame()
     {
         mGamePieces = new GamePiece[24];
@@ -23,20 +23,18 @@ public class CheckersGame {
     {
         setupSpaces();
         setupPieces();
-        printPieces();
     }
 
     /*
-     * sets up the space types of each board position
+     * Sets up the space types of each board position
      */
     public void setupSpaces()
     {
 
-        //black spaces
         int spaceCounter = 0;
         int x = 1;
         int y = 1;
-        //sets up black spaces at the top
+        //Sets up black spaces
         for (int i = 1; i <= 8; ++i)
         {
             if (i % 2 == 1) {x = 1;} else {x = 2;}
@@ -44,7 +42,6 @@ public class CheckersGame {
             {
                 mBoardSpaces[spaceCounter] = new BoardSpace(spaceType.BLACK, x, y);
 
-                mBoardSpaces[spaceCounter].printSpace();
                 x+=2;
                 spaceCounter++;
             }
@@ -53,7 +50,7 @@ public class CheckersGame {
 
         x = 1;
         y = 1;
-        //sets up white spaces
+        //Sets up white spaces
         for (int i = 1; i <= 8; ++i)
         {
             if (i % 2 == 0) {x = 1;} else {x = 2;}
@@ -61,7 +58,6 @@ public class CheckersGame {
             {
                 mBoardSpaces[spaceCounter] = new BoardSpace(spaceType.WHITE, x, y);
 
-                mBoardSpaces[spaceCounter].printSpace();
                 x+=2;
                 spaceCounter++;
             }
@@ -71,20 +67,20 @@ public class CheckersGame {
     }
 
     /*
-     * sets up the default positions of the player pieces
+     * Sets up the default positions of the player pieces
      */
     public void setupPieces()
     {
         int pieceCounter = 0;
         int rx;
         int ry = 1;
-        //sets up red pieces at the top
+        //Sets up red pieces at the top
         for (int i = 1; i <= 3; ++i)
         {
             if (i == 2) {rx = 2;} else {rx = 1;}
             for (int j = 1; j <= 4; ++j)
             {
-                mGamePieces[pieceCounter] = new GamePiece(GamePiece.pieceColor.RED, rx, ry);
+                mGamePieces[pieceCounter] = new GamePiece(pieceColor.RED, rx, ry);
                 rx+=2;
                 pieceCounter++;
             }
@@ -93,13 +89,13 @@ public class CheckersGame {
 
         int bx;
         int by = 8;
-        //sets up black pieces at the bottom
+        //Sets up black pieces at the bottom
         for (int i = 1; i <= 3; ++i)
         {
             if (i == 2) {bx = 7;} else {bx = 8;}
             for (int j = 1; j <= 4; ++j)
             {
-                mGamePieces[pieceCounter] = new GamePiece(GamePiece.pieceColor.BLACK, bx, by);
+                mGamePieces[pieceCounter] = new GamePiece(pieceColor.BLACK, bx, by);
                 bx-=2;
                 pieceCounter++;
             }
@@ -108,12 +104,70 @@ public class CheckersGame {
         }
     }
 
+
+
     /*
-    takes input of the player's selected piece position to move and desired position to move it to.
+    Takes input of the player's selected piece position to move and desired position to move it to.
     It will check adjacent positions and see if there is an empty space or other piece.
      */
-    public boolean checkValidMove()
+    public boolean checkValidMove(pieceColor playerMovingColor, GamePiece pieceToMove, BoardSpace spaceToMoveTo)
     {
+        //Returns false if the piece position selected is null
+        if (pieceToMove == null)
+        {
+            System.out.println("--- Invalid move --- position selected does not contain an existing piece!");
+            return false;
+        }
+
+
+
+        //Returns false if spaceToMoveTo already contains a piece
+        if (spaceToMoveTo.getX() == pieceToMove.getX() && spaceToMoveTo.getY() == pieceToMove.getY())
+        {
+            return false;
+        }
+        for (int i = 0; i < 24; ++i)
+        {
+            if (spaceToMoveTo.getX() == mGamePieces[i].getX() && spaceToMoveTo.getY() == mGamePieces[i].getY())
+            {
+                System.out.println("--- Invalid move --- desired move space already contains an existing space!");
+                return false;
+            }
+        }
+
+
+
+        //Establishes direction variable as a 1 for downward movement and -1 for upward movement.
+        //This allows us to prevent an uncrowned piece from moving in the wrong direction.
+        int direction = 0;
+        direction = (playerMovingColor == pieceColor.RED) ? 1 : -1;
+
+
+
+        //Checks for valid movement of uncrowned pieces
+        if (pieceToMove.crowned == false && pieceToMove.getColor() == playerMovingColor)
+        {
+            if (spaceToMoveTo.getSpaceType() == spaceType.BLACK
+                    && (Math.abs(spaceToMoveTo.getX() - pieceToMove.getX()) == 1)
+                    && (spaceToMoveTo.getY() - pieceToMove.getY() == direction))
+            {
+                return true;
+            }
+            //If not moving to an adjacent space, check for jump move
+            else if (spaceToMoveTo.getSpaceType() == spaceType.BLACK
+                    && (Math.abs(spaceToMoveTo.getX() - pieceToMove.getX()) == 2)
+                    && (spaceToMoveTo.getY() - pieceToMove.getY() == direction * 2))
+            {
+
+            }
+
+
+        }
+        //Checks for valid movement of crowned pieces
+        else if (pieceToMove.crowned == true && pieceToMove.getColor() == playerMovingColor)
+        {
+
+        }
 
         return false;
     }
@@ -123,7 +177,23 @@ public class CheckersGame {
      */
     public GamePiece[] move(playerTurn turn, GamePiece[] pieces, GamePiece pieceToMove, BoardSpace spaceToMoveTo)
     {
-        checkValidMove();
+        mGamePieces = pieces;
+        pieceColor playerMovingColor;
+        if (turn == playerTurn.RED) {playerMovingColor = pieceColor.RED;}
+        else {playerMovingColor = pieceColor.BLACK;}
+
+
+        //Sets the x and y of the Game Piece to match the x and y of the desired space
+        //If it is a valid movement
+        if (checkValidMove(playerMovingColor, pieceToMove, spaceToMoveTo) == true)
+        {
+            pieceToMove.setX(spaceToMoveTo.getX());
+            pieceToMove.setY(spaceToMoveTo.getY());
+        }
+
+        //Check for double jump
+
+
 
         return mGamePieces;
     }
