@@ -1,5 +1,6 @@
 package com.zybooks.coolcheckers;
 
+
 public class GamePiece {
 
     public pieceColor mPieceColor;
@@ -14,6 +15,18 @@ public class GamePiece {
         mPieceColor = type;
         xPosition = x;
         yPosition = y;
+    }
+
+    public void crown()
+    {
+        crowned = true;
+    }
+
+    public void kill()
+    {
+        captured = true;
+        xPosition = -1;
+        yPosition = -1;
     }
 
     public pieceColor getColor()
