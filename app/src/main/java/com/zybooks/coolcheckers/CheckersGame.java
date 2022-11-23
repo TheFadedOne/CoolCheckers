@@ -107,7 +107,7 @@ public class CheckersGame {
 
     /*
     Takes input of the player's selected piece position to move and desired position to move it to.
-    It will check adjacent positions and see if there is an empty space or other piece.
+    Returns true if a legal move is possible with the given inputs
      */
     public boolean isValidMove(pieceColor playerMovingColor, GamePiece pieceToMove, BoardSpace spaceToMoveTo)
     {
@@ -165,8 +165,6 @@ public class CheckersGame {
                     && (getPieceWithPosition((pieceToMove.getX() + spaceToMoveTo.getX()) / 2,
                     (pieceToMove.getY() + spaceToMoveTo.getY()) / 2).getColor() == oppositeColor))
             {
-                getPieceWithPosition((pieceToMove.getX() + spaceToMoveTo.getX()) / 2,
-                        (pieceToMove.getY() + spaceToMoveTo.getY()) / 2).kill();
                 return true;
             }
 
@@ -188,8 +186,6 @@ public class CheckersGame {
                     && (getPieceWithPosition((pieceToMove.getX() + spaceToMoveTo.getX()) / 2,
                     (pieceToMove.getY() + spaceToMoveTo.getY()) / 2).getColor() == oppositeColor))
             {
-                getPieceWithPosition((pieceToMove.getX() + spaceToMoveTo.getX()) / 2,
-                        (pieceToMove.getY() + spaceToMoveTo.getY()) / 2).kill();
                 return true;
             }
         }
@@ -210,8 +206,17 @@ public class CheckersGame {
 
         //Sets the x and y of the Game Piece to match the x and y of the desired space
         //If it is a valid movement
+
         if (isValidMove(playerMovingColor, pieceToMove, spaceToMoveTo) == true)
         {
+            //checks for jump move
+            if (isJumpMove(playerMovingColor, pieceToMove, spaceToMoveTo))
+            {
+                getPieceWithPosition((spaceToMoveTo.getX() + pieceToMove.getX()) / 2,
+                        (spaceToMoveTo.getY() + pieceToMove.getY()) / 2).kill();
+            }
+
+            //sets new piece position
             pieceToMove.setX(spaceToMoveTo.getX());
             pieceToMove.setY(spaceToMoveTo.getY());
 
@@ -224,9 +229,13 @@ public class CheckersGame {
             {
                 pieceToMove.crown();
             }
+
         }
 
+
+
         //Check for double jump
+
 
 
 
@@ -238,8 +247,20 @@ public class CheckersGame {
     /*
      *
      */
-    public boolean isJumpMove()
+    public boolean isJumpMove(pieceColor playerMovingColor, GamePiece pieceToMove, BoardSpace spaceToMoveTo)
     {
+        //designates a variable to represent the opposite color of piece being moved
+        pieceColor oppositeColor = (playerMovingColor == pieceColor.RED) ? pieceColor.BLACK : pieceColor.RED;
+
+        if (spaceToMoveTo.getSpaceType() == spaceType.BLACK
+                && (Math.abs(spaceToMoveTo.getX() - pieceToMove.getX()) == 2)
+                && (Math.abs(spaceToMoveTo.getY() - pieceToMove.getY()) == 2)
+                && (getPieceWithPosition((pieceToMove.getX() + spaceToMoveTo.getX()) / 2,
+                (pieceToMove.getY() + spaceToMoveTo.getY()) / 2).getColor() == oppositeColor))
+        {
+
+            return true;
+        }
 
         return false;
     }
@@ -286,3 +307,4 @@ public class CheckersGame {
 
     }
 }
+

@@ -9,6 +9,8 @@ import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import java.util.Scanner;
+
 public class MainActivity extends AppCompatActivity {
 
     private static CheckersGame mGame;
@@ -66,17 +68,37 @@ public class MainActivity extends AppCompatActivity {
      */
     public static void playGame()
     {
+        Scanner scan = new Scanner(System.in);
+        int pieceX;
+        int pieceY;
+        int spaceX;
+        int spaceY;
+        GamePiece[] temp = new GamePiece[24];
         while (gameOver == false)
         {
-            printPieces();
+            printBoard();
 
-            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(4, 4));
-            mPieces = mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(6, 6), getBoardSpaceWithPosition(5, 5));
-            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(4, 4), getBoardSpaceWithPosition(6, 6));
+            System.out.println("player turn: " + mPlayerTurn);
+            System.out.println("enter piece x: ");
+            pieceX = scan.nextInt();
+            System.out.println("enter piece y: ");
+            pieceY = scan.nextInt();
+            System.out.println("enter space y: ");
+            spaceX = scan.nextInt();
+            System.out.println("enter space y: ");
+            spaceY = scan.nextInt();
 
-            printPieces();
 
-            gameOver = true;
+            temp = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+
+            //checks to see if any new moves were made with the given inputs.
+            //If so then changes the players turn to next player
+            if (temp == mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY)))
+            {
+                mPieces = temp;
+                mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+            }
+
         }
     }
 
