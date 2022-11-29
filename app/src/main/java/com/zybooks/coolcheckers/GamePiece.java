@@ -1,8 +1,8 @@
 package com.zybooks.coolcheckers;
 
+
 public class GamePiece {
 
-    public enum pieceColor {BLACK, RED};
     public pieceColor mPieceColor;
     public boolean crowned;
     public boolean captured;
@@ -15,6 +15,23 @@ public class GamePiece {
         mPieceColor = type;
         xPosition = x;
         yPosition = y;
+    }
+
+    public void crown()
+    {
+        crowned = true;
+    }
+
+    public void kill()
+    {
+        captured = true;
+        xPosition = -1;
+        yPosition = -1;
+    }
+
+    public pieceColor getColor()
+    {
+        return mPieceColor;
     }
 
     public int getX()

@@ -13,6 +13,11 @@ public class BoardSpace {
         yPosition = y;
     }
 
+    public spaceType getSpaceType()
+    {
+        return mSpaceType;
+    }
+
     public int getX()
     {
         return xPosition;
@@ -39,3 +44,4 @@ public class BoardSpace {
                 + ",  x: " + xPosition + ",  y: " + yPosition);
     }
 }
+
