@@ -6,9 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:visibility="visible">
-
-    //layout version with horizontal buttons
+    tools:visibility="visible"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,76 +16,76 @@
 
         <Button
             android:id="@+id/space_00"
-            android:tag="space_00"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/light_square"
+            android:tag="space_00"
             android:textAlignment="center"
             android:textSize="30sp" />
 
         <Button
             android:id="@+id/space_01"
-            android:tag="space_01"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/dark_square"
-            android:textSize="60sp"/>
+            android:tag="space_01"
+            android:textSize="60sp" />
 
         <Button
             android:id="@+id/space_02"
-            android:tag="space_02"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/light_square"
-            android:textSize="60sp"/>
+            android:tag="space_02"
+            android:textSize="60sp" />
 
         <Button
             android:id="@+id/space_03"
-            android:tag="space_03"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/dark_square"
-            android:textSize="60sp"/>
+            android:tag="space_03"
+            android:textSize="60sp" />
 
         <Button
             android:id="@+id/space_04"
-            android:tag="space_04"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/light_square"
-            android:textSize="60sp"/>
+            android:tag="space_04"
+            android:textSize="60sp" />
 
         <Button
             android:id="@+id/space_05"
-            android:tag="space_05"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/dark_square"
-            android:textSize="60sp"/>
+            android:tag="space_05"
+            android:textSize="60sp" />
 
         <Button
             android:id="@+id/space_06"
-            android:tag="space_06"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/light_square"
-            android:textSize="60sp"/>
+            android:tag="space_06"
+            android:textSize="60sp" />
 
         <Button
             android:id="@+id/space_07"
-            android:tag="space_07"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/dark_square"
-            android:textSize="60sp"/>
+            android:tag="space_07"
+            android:textSize="60sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -95,9 +94,169 @@
         android:layout_weight="1">
 
         <Button
+            android:id="@+id/space_10"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:tag="space_10"
+            android:textSize="60sp" />
+
+        <Button
+            android:id="@+id/space_11"
+            android:tag="space_11"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_12"
+            android:tag="space_12"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_13"
+            android:tag="space_13"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_14"
+            android:tag="space_14"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_15"
+            android:tag="space_15"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_16"
+            android:tag="space_16"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_17"
+            android:tag="space_17"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="30sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/space_20"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:tag="space_20"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/space_21"
+            android:tag="space_21"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_22"
+            android:tag="space_22"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_23"
+            android:tag="space_23"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_24"
+            android:tag="space_24"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_25"
+            android:tag="space_25"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_26"
+            android:tag="space_26"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_square"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/space_27"
+            android:tag="space_27"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="30sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/space_30"
+            android:tag="space_30"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_square"
+            android:textSize="30sp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
