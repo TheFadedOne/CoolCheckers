@@ -9,626 +9,15 @@
     tools:visibility="visible"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/space_00"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:tag="space_00"
-            android:textAlignment="center"
-            android:textSize="30sp" />
-
-        <Button
-            android:id="@+id/space_01"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:tag="space_01"
-            android:textSize="60sp" />
-
-        <Button
-            android:id="@+id/space_02"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:tag="space_02"
-            android:textSize="60sp" />
-
-        <Button
-            android:id="@+id/space_03"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:tag="space_03"
-            android:textSize="60sp" />
-
-        <Button
-            android:id="@+id/space_04"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:tag="space_04"
-            android:textSize="60sp" />
-
-        <Button
-            android:id="@+id/space_05"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:tag="space_05"
-            android:textSize="60sp" />
-
-        <Button
-            android:id="@+id/space_06"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:tag="space_06"
-            android:textSize="60sp" />
-
-        <Button
-            android:id="@+id/space_07"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:tag="space_07"
-            android:textSize="60sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/space_10"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:tag="space_10"
-            android:textSize="60sp" />
-
-        <Button
-            android:id="@+id/space_11"
-            android:tag="space_11"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_12"
-            android:tag="space_12"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_13"
-            android:tag="space_13"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_14"
-            android:tag="space_14"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_15"
-            android:tag="space_15"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_16"
-            android:tag="space_16"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_17"
-            android:tag="space_17"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:textSize="30sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/space_20"
-            android:layout_width="0dp"
-            android:layout_height="44dp"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:tag="space_20"
-            android:textSize="30sp" />
-
-        <Button
-            android:id="@+id/space_21"
-            android:tag="space_21"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_22"
-            android:tag="space_22"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_23"
-            android:tag="space_23"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_24"
-            android:tag="space_24"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_25"
-            android:tag="space_25"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_26"
-            android:tag="space_26"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/dark_square"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/space_27"
-            android:tag="space_27"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:textSize="30sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/space_30"
-            android:tag="space_30"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/light_square"
-            android:textSize="30sp"/>
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
     <ImageView
         android:layout_width="360dp"
         android:layout_height="360dp"
         android:src="@drawable/checkerboard"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501">
+        app:layout_constraintTop_toTopOf="parent">
 
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.685"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.316"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.683"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.335">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.316"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/blackpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpieceking"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
->>>>>>> 6a66f5dbd6b272054a56a5fb504f87652ab5f293
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.806"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.316"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/redpiece"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.685"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73">
     </ImageView>
 
     <GridLayout
@@ -638,17 +27,140 @@
         android:clickable="false"
         android:columnCount="8"
         android:rowCount="8"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-        app:layout_constraintVertical_bias="0.478"
-
         tools:visibility="invisible">
 
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
 
     </GridLayout>
 

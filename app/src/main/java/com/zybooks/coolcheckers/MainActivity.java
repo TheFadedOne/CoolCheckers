@@ -69,36 +69,19 @@ public class MainActivity extends AppCompatActivity {
     public static void playGame()
     {
         Scanner scan = new Scanner(System.in);
-        int pieceX;
-        int pieceY;
-        int spaceX;
-        int spaceY;
+        int pieceX = 3;
+        int pieceY = 3;
+        int spaceX = 4;
+        int spaceY = 4;
         GamePiece[] temp = new GamePiece[24];
         while (gameOver == false)
         {
-            printBoard();
-
-            System.out.println("player turn: " + mPlayerTurn);
-            System.out.println("enter piece x: ");
-            pieceX = scan.nextInt();
-            System.out.println("enter piece y: ");
-            pieceY = scan.nextInt();
-            System.out.println("enter space y: ");
-            spaceX = scan.nextInt();
-            System.out.println("enter space y: ");
-            spaceY = scan.nextInt();
 
 
-            temp = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+            mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
 
-            //checks to see if any new moves were made with the given inputs.
-            //If so then changes the players turn to next player
-            if (temp == mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY)))
-            {
-                mPieces = temp;
-                mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
-            }
-
+            gameOver = true;
         }
     }
 
