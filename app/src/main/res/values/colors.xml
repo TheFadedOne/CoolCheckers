@@ -5,4 +5,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent_red">#00FF0006</color>
+
+    //ira stuff
+    <color name="dirty_green">#667e2c</color>
+    <color name="gray">#A6A6A6</color>
+    <color name="blue">#103CAB</color>
+    //background??
+    <color name="beige">#DDC7A0</color>
+
+
 </resources>

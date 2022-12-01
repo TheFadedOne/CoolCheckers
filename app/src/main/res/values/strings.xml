@@ -2,4 +2,36 @@
     <string name="app_name">CoolCheckers</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //try out nav
+    <string name="game">Game</string>
+    <string name="shop">Shop</string>
+    <string name="rules_nav">Rules</string>
+
+    //for shop
+    <string name="change_color">Board Colors:</string>
+    <string name="board1">Green Board</string>
+    <string name="board2">Brown Board</string>
+    <string name="board3">Gray Board</string>
+    <string name="board4">Blue Board</string>
+
+    //for rules
+    <string name="rules">How to play:</string>
+    <string name="game_play">Game play</string>
+    <string name="game_play_rule">Checkers is played by two players. Each player begins the game with 12 discs and places them on the 12 dark squares closest to him or her.</string>
+    <string name="move">Move</string>
+    <string name="move_rule">The pieces always move diagonally and single pieces are always limited to forward moves.</string>
+    <string name="move_rule2">A piece making a non-capturing move may move only one square.</string>
+    <string name="capture">Capture</string>
+    <string name="capture_rule">To capture a piece of your opponent, your piece leaps over one of the opponent\'s pieces and lands in a straight diagonal line on the other side. This landing square must be empty.</string>
+    <string name="capture_rule2">When a piece is captured, it is removed from the board.</string>
+    //maybe delete the capture rule 3
+    <string name="capture_rule3">Single pieces may shift direction diagonally during a multiple capture turn, but must always jump forward (toward the opponent).</string>
+    <string name="upgrade">Upgrade a piece</string>
+    <string name="upgrade_rule">When a piece reaches the furthest row, it is crowned and becomes a king.</string>
+    <string name="upgrade_rule2">Kings are limited to moving diagonally but can move both forward and backward.</string>
+    <string name="end">End of the Game</string>
+    <string name="end_rule">A player wins the game when the opponent cannot make a move.</string>
+
+
 </resources>
