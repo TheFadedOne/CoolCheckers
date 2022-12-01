@@ -19,7 +19,7 @@ public class ShopFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_shop, container, false);
 
         SharedPreferences sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE);
-        int colorId = sharedPref.getInt("color", R.color.black);
+        int colorId = sharedPref.getInt("color", R.color.dark_square);
 
         int radioId = R.id.radio_brown;
 
