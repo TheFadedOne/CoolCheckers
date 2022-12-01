@@ -36,16 +36,16 @@ public class ShopFragment extends Fragment {
         RadioButton radio = rootView.findViewById(radioId);
         radio.setChecked(true);
 
-        RadioGroup colorRadioGroup = rootView.findViewById(R.id.radio_buttons);
-        for (int i = 0; i < colorRadioGroup.getChildCount(); i++) {
-            radio = (RadioButton) colorRadioGroup.getChildAt(i);
-            radio.setOnClickListener(this::onColorSelected);
+        RadioGroup shopRadioGroup = rootView.findViewById(R.id.radio_buttons);
+        for (int i = 0; i < shopRadioGroup.getChildCount(); i++) {
+            radio = (RadioButton) shopRadioGroup.getChildAt(i);
+            radio.setOnClickListener(this::boardChange);
         }
 
         return rootView;
     }
 
-    private void onColorSelected(View view) {
+    private void boardChange(View view) {
         int colorId = R.color.dark_square;
 
         if (view.getId() == R.id.radio_dirty_green) {

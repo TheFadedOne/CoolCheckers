@@ -22,13 +22,6 @@
         android:layout_gravity="center"
         android:orientation="vertical" >
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/checkerboard">
-        </ImageView>
-
         <RadioButton
             android:id="@+id/radio_brown"
             android:text="@string/board2"
@@ -36,13 +29,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/shop_text"/>
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/board1">
-        </ImageView>
 
         <RadioButton
             android:id="@+id/radio_dirty_green"
@@ -57,6 +43,7 @@
             android:id="@+id/radio_blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
         <RadioButton
             android:id="@+id/radio_gray"
             android:layout_width="wrap_content"
