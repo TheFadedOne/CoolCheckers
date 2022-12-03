@@ -19,17 +19,6 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static CheckersGame mGame;
-    int switcher = 1;
-    String click_move = "empty";
-    GridView gridView;
-    CheckersGame board = new CheckersGame();
-    public GamePiece[] copyGamePieces;
-    private GridLayout mCheckerBoard;
-    public static GamePiece[] mPieces;
-    public static BoardSpace[] mBoardSpaces;
-    public static boolean gameOver;
-    public static playerTurn mPlayerTurn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

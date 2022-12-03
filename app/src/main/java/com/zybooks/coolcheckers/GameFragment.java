@@ -1,8 +1,12 @@
 package com.zybooks.coolcheckers;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -20,14 +24,15 @@ import java.util.Scanner;
 
 public class GameFragment extends Fragment {
 
-    private static CheckersGame mGame;
+    private CheckersGame mGame;
     CheckersGame board = new CheckersGame();
     private GridLayout mCheckerBoard;
-    public static GamePiece[] mPieces;
+    private GridLayout mCheckerBoardImages;
+    public GamePiece[] mPieces;
     public ImageView[] mPieceImages;
-    public static BoardSpace[] mBoardSpaces;
-    public static boolean gameOver;
-    public static playerTurn mPlayerTurn;
+    public BoardSpace[] mBoardSpaces;
+    public boolean gameOver;
+    public playerTurn mPlayerTurn;
 
     public GameFragment() {
         // Required empty public constructor
@@ -47,15 +52,22 @@ public class GameFragment extends Fragment {
         }
 
 
+
+
+        mCheckerBoardImages = parentView.findViewById(R.id.CheckerGameBoardImages);
+        ImageView piece = (ImageView) mCheckerBoardImages.getChildAt(0);
+        Drawable myIcon = getResources().getDrawable(R.drawable.redpiece);
+        piece.setImageDrawable(myIcon);
+
         startGame();
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_game, container, false);
+        return parentView;
     }
 
     //Click listener for all the buttons
-    private void onBoardSpaceClick(View view) {
-
+    private void onBoardSpaceClick(View view)
+    {
 
     }
 
@@ -63,7 +75,7 @@ public class GameFragment extends Fragment {
     /*
      * initial setup for the game
      */
-    public static void startGame()
+    public void startGame()
     {
         mGame = new CheckersGame();
         mPieces = new GamePiece[24];
@@ -74,15 +86,17 @@ public class GameFragment extends Fragment {
         mBoardSpaces = mGame.getBoardSpaces();
         mPlayerTurn = playerTurn.RED;
 
+        updateBoardView();
         playGame();
     }
 
     /*
      * game loop. game does not end until a player does not have any remaining pieces.
      */
-    public static void playGame()
+    public void playGame()
     {
         Scanner scan = new Scanner(System.in);
+        int pieceIndex;
         int pieceX = 3;
         int pieceY = 3;
         int spaceX = 4;
@@ -93,7 +107,18 @@ public class GameFragment extends Fragment {
 
 
             mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(4, 4), getBoardSpaceWithPosition(3, 5));
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(2, 2), getBoardSpaceWithPosition(3, 3));
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(4, 4));
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(1, 1), getBoardSpaceWithPosition(2, 2));
+
+            mPieces = mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(6, 6), getBoardSpaceWithPosition(5, 5));
+            mPieces = mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(5, 5), getBoardSpaceWithPosition(3, 3));
+            mPieces = mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(1, 1));
+
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+
+            updateBoardView();
 
             gameOver = true;
         }
@@ -101,12 +126,36 @@ public class GameFragment extends Fragment {
 
 
     /*
-     * Updates the positions of the image views to reflect the positions of the checker
-     * pieces within the array
+     * Updates the images of the image views to reflect the positions of the checker
+     * pieces within the mPieces array
      */
-    public void updateBoardView(GamePiece[] pieces)
+    public void updateBoardView()
     {
-
+        ImageView boardImage;
+        Drawable red = getResources().getDrawable(R.drawable.redpiece);
+        Drawable redKing = getResources().getDrawable(R.drawable.redpieceking);
+        Drawable black = getResources().getDrawable(R.drawable.blackpiece);
+        Drawable blackKing = getResources().getDrawable(R.drawable.blackpieceking);
+        for (int i = 0; i < 64; ++i)
+        {
+            boardImage = (ImageView) mCheckerBoardImages.getChildAt(i);
+            boardImage.setImageDrawable(null);
+            for (int j = 0; j < 24; ++j)
+            {
+                if (getXFromButtonIndex(i) == mPieces[j].getX()
+                        && getYFromButtonIndex(i) == mPieces[j].getY())
+                {
+                    if (!mPieces[j].crowned && mPieces[j].getColor() == pieceColor.RED)
+                    {boardImage.setImageDrawable(red);}
+                    else if (mPieces[j].crowned && mPieces[j].getColor() == pieceColor.RED)
+                    {boardImage.setImageDrawable(redKing);}
+                    else if (!mPieces[j].crowned && mPieces[j].getColor() == pieceColor.BLACK)
+                    {boardImage.setImageDrawable(black);}
+                    else if (mPieces[j].crowned && mPieces[j].getColor() == pieceColor.BLACK)
+                    {boardImage.setImageDrawable(blackKing);}
+                }
+            }
+        }
     }
 
     /*
@@ -116,7 +165,7 @@ public class GameFragment extends Fragment {
      * then will return a null GamePiece which will tell the CheckersGame model class that
      * no real piece has been selected.
      */
-    public static GamePiece getPieceWithPosition(int x, int y)
+    public GamePiece getPieceWithPosition(int x, int y)
     {
         GamePiece selectedPiece = null;
 
@@ -127,14 +176,13 @@ public class GameFragment extends Fragment {
                 selectedPiece = mPieces[i];
             }
         }
-
         return selectedPiece;
     }
 
     /*
      * has similar function to the 'getPieceWithPosition' method, except for Board Spaces
      */
-    public static BoardSpace getBoardSpaceWithPosition(int x, int y)
+    public BoardSpace getBoardSpaceWithPosition(int x, int y)
     {
         BoardSpace selectedSpace = null;
 
@@ -145,22 +193,22 @@ public class GameFragment extends Fragment {
                 selectedSpace = mBoardSpaces[i];
             }
         }
-
         return selectedSpace;
     }
 
-    /*
-     * prints all of the pieces
-     */
-    public static void printPieces()
-    {
-        for (int i = 0; i < 24; ++i)
-        {
-            System.out.print("Piece #" + i + " === ");
-            mPieces[i].printPiece();
 
-        }
-        System.out.println();
+    public int getXFromButtonIndex(int i) {
+        return (i % 8) + 1;
+    }
 
+    public int getYFromButtonIndex(int i) {
+        return (i / 8) + 1;
+    }
+
+    public int getButtonIndexFromPosition (int x, int y) {
+        x-=1;
+        y-=1;
+        int index = ((y * 8) + x);
+        return index;
     }
 }
