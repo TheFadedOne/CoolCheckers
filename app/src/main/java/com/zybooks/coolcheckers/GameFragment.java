@@ -51,9 +51,6 @@ public class GameFragment extends Fragment {
             spaceButton.setOnClickListener(this::onBoardSpaceClick);
         }
 
-
-
-
         mCheckerBoardImages = parentView.findViewById(R.id.CheckerGameBoardImages);
         ImageView piece = (ImageView) mCheckerBoardImages.getChildAt(0);
         Drawable myIcon = getResources().getDrawable(R.drawable.redpiece);
