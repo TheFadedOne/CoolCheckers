@@ -101,8 +101,6 @@ public class GameFragment extends Fragment {
         GamePiece[] temp = new GamePiece[24];
         while (gameOver == false)
         {
-
-
             mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
             mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(4, 4), getBoardSpaceWithPosition(3, 5));
             mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(2, 2), getBoardSpaceWithPosition(3, 3));
