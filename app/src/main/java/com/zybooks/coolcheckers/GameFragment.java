@@ -99,21 +99,22 @@ public class GameFragment extends Fragment {
         int pieceY = 3;
         int spaceX = 4;
         int spaceY = 4;
-        
+
         while (gameOver == false)
         {
             if (mPlayerTurn == playerTurn.RED)
             {
-
+                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(4, 4));
             }
             else if (playingBot == false && mPlayerTurn == playerTurn.BLACK)
             {
-
+                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(4, 4));
             }
 
             else if (playingBot == true && mPlayerTurn == playerTurn.BLACK)
             {
-
+                //rather than a human inputting a piece and board space, an automated process will input these arguments
+                //mPieces = mGame.move(mPlayerTurn, mPieces, , );
             }
 
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
