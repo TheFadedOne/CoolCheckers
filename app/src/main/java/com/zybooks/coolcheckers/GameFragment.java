@@ -102,7 +102,7 @@ public class GameFragment extends Fragment {
         int pieceY = 3;
         int spaceX = 4;
         int spaceY = 4;
-        GamePiece[] temp = new GamePiece[24];
+        
         while (gameOver == false)
         {
             if (mPlayerTurn == playerTurn.RED)
