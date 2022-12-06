@@ -13,12 +13,14 @@ import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.Scanner;
@@ -37,6 +39,10 @@ public class GameFragment extends Fragment {
     public boolean gameOver;
     public boolean playingBot = true;
     public playerTurn mPlayerTurn;
+
+    //trying out for changing board
+    private RadioGroup group;
+    private ImageView imageView;
 
     public GameFragment() {
         // Required empty public constructor
@@ -60,13 +66,18 @@ public class GameFragment extends Fragment {
         Drawable myIcon = getResources().getDrawable(R.drawable.redpiece);
         piece.setImageDrawable(myIcon);
 
-        startGame();
 
-        View shop =
-        setBoardImage();
+        startGame();
 
         // Inflate the layout for this fragment
         return parentView;
+
+    }
+    //change board
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.board_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     //Click listener for all the buttons
@@ -244,6 +255,7 @@ public class GameFragment extends Fragment {
     }
 
     public void setBoardImage(View view){
+
 
 
 

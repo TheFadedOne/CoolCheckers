@@ -23,14 +23,14 @@ public class ShopFragment extends Fragment {
 
         int radioId = R.id.radio_brown;
 
-        if (colorId == R.color.dirty_green) {
-            radioId = R.id.radio_dirty_green;
+        if (colorId == R.color.green) {
+            radioId = R.id.radio_green;
         }
-        else if (colorId == R.color.gray) {
-            radioId = R.id.radio_gray;
+        else if (colorId == R.color.ice) {
+            radioId = R.id.radio_ice;
         }
-        else if (colorId == R.color.blue) {
-            radioId = R.id.radio_blue;
+        else if (colorId == R.color.ruby) {
+            radioId = R.id.radio_ruby;
         }
 
         RadioButton radio = rootView.findViewById(radioId);
@@ -48,17 +48,17 @@ public class ShopFragment extends Fragment {
     private void boardChange(View view) {
         int colorId = R.color.dark_square;
 
-        if (view.getId() == R.id.radio_dirty_green) {
+        if (view.getId() == R.id.radio_green) {
 
-            colorId = R.color.dirty_green;
+            colorId = R.color.green;
 
-        } else if (view.getId() == R.id.radio_gray) {
+        } else if (view.getId() == R.id.radio_ice) {
 
-            colorId = R.color.gray;
+            colorId = R.color.ice;
 
-        } else if (view.getId() == R.id.radio_blue) {
+        } else if (view.getId() == R.id.radio_ruby) {
 
-            colorId = R.color.blue;
+            colorId = R.color.ruby;
         }
 
         SharedPreferences sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE);
