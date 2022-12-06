@@ -107,15 +107,10 @@ public class GameFragment extends Fragment {
             {
                 mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
             }
-            else if (playingBot == false && mPlayerTurn == playerTurn.RED)
-            {
-
-            }
             else if (playingBot  == false && mPlayerTurn == playerTurn.BLACK)
             {
                 mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
             }
-
             else if (playingBot == true && mPlayerTurn == playerTurn.BLACK)
             {
                 //rather than a human inputting a piece and board space, an automated process will input these arguments
@@ -131,9 +126,9 @@ public class GameFragment extends Fragment {
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
 
             updateBoardView();
+            gameOver = (checkGameOverState()) ? true : false;
         }
     }
-
 
     /*
      * Updates the images of the image views to reflect the positions of the checker
@@ -175,10 +170,18 @@ public class GameFragment extends Fragment {
         int blackRemaining = 0;
         for (int i = 0; i < 24; ++i)
         {
-            //if (mPieces.)
-
+            if (mPieces[i].getColor() == pieceColor.RED) {
+                ++redRemaining;
+            }
+            else if (mPieces[i].getColor() == pieceColor.BLACK) {
+                ++blackRemaining;
+            }
         }
-        return true;
+
+        if (redRemaining == 0 || blackRemaining == 0) {
+            return true;
+        }
+        return false;
     }
 
     /*
