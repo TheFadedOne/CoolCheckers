@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +33,7 @@ public class GameFragment extends Fragment {
     public ImageView[] mPieceImages;
     public BoardSpace[] mBoardSpaces;
     public boolean gameOver;
-    public boolean playingBot = false;
+    public boolean playingBot = true;
     public playerTurn mPlayerTurn;
 
     public GameFragment() {
@@ -102,26 +103,34 @@ public class GameFragment extends Fragment {
 
         while (gameOver == false)
         {
-            if (mPlayerTurn == playerTurn.RED)
+            if (playingBot  == false && mPlayerTurn == playerTurn.RED)
             {
-                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(4, 4));
+                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
             }
-            else if (playingBot == false && mPlayerTurn == playerTurn.BLACK)
+            else if (playingBot == false && mPlayerTurn == playerTurn.RED)
             {
-                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(4, 4));
+
+            }
+            else if (playingBot  == false && mPlayerTurn == playerTurn.BLACK)
+            {
+                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
             }
 
             else if (playingBot == true && mPlayerTurn == playerTurn.BLACK)
             {
                 //rather than a human inputting a piece and board space, an automated process will input these arguments
-                //mPieces = mGame.move(mPlayerTurn, mPieces, , );
+
+                int[] botMove = new int[4];
+                CheckBot cb = new CheckBot(mPieces, mBoardSpaces);
+                botMove = cb.generateMove(mPieces, mBoardSpaces, mPlayerTurn);
+
+                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(botMove[0], botMove[1]), getBoardSpaceWithPosition(botMove[2], botMove[3]));
+
             }
 
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
 
             updateBoardView();
-
-            gameOver = true;
         }
     }
 
@@ -157,6 +166,19 @@ public class GameFragment extends Fragment {
                 }
             }
         }
+    }
+
+
+    public boolean checkGameOverState()
+    {
+        int redRemaining = 0;
+        int blackRemaining = 0;
+        for (int i = 0; i < 24; ++i)
+        {
+            //if (mPieces.)
+
+        }
+        return true;
     }
 
     /*
