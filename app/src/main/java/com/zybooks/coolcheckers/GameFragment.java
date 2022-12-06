@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -101,11 +102,17 @@ public class GameFragment extends Fragment {
     {
         Scanner scan = new Scanner(System.in);
         int pieceIndex;
+<<<<<<< Updated upstream
         int pieceX = 3;
         int pieceY = 3;
         int spaceX = 4;
         int spaceY = 4;
 
+=======
+        int xCord = -1;
+        int yCord = -1;
+        
+>>>>>>> Stashed changes
         while (gameOver == false)
         {
             if (playingBot  == false && mPlayerTurn == playerTurn.RED)
@@ -133,6 +140,24 @@ public class GameFragment extends Fragment {
             updateBoardView();
             gameOver = (checkGameOverState()) ? true : false;
         }
+<<<<<<< Updated upstream
+=======
+
+        // getting child count index and running it through
+        View.OnClickListener pieceButton = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int id = (Integer) view.getId();
+                MotionEvent event = null;
+                int spaceX = (int)event.getX();
+                int spaceY = (int)event.getY();
+                int pieceX = (int)event.getX();
+                int pieceY = (int)event.getY();
+                
+
+            }
+        };
+>>>>>>> Stashed changes
     }
 
     /*
