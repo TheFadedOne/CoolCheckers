@@ -32,6 +32,7 @@ public class GameFragment extends Fragment {
     public ImageView[] mPieceImages;
     public BoardSpace[] mBoardSpaces;
     public boolean gameOver;
+    public boolean playingBot = false;
     public playerTurn mPlayerTurn;
 
     public GameFragment() {
@@ -101,18 +102,22 @@ public class GameFragment extends Fragment {
         int pieceY = 3;
         int spaceX = 4;
         int spaceY = 4;
-        GamePiece[] temp = new GamePiece[24];
+        
         while (gameOver == false)
         {
-            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
-            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(4, 4), getBoardSpaceWithPosition(3, 5));
-            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(2, 2), getBoardSpaceWithPosition(3, 3));
-            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(4, 4));
-            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(1, 1), getBoardSpaceWithPosition(2, 2));
+            if (mPlayerTurn == playerTurn.RED)
+            {
 
-            mPieces = mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(6, 6), getBoardSpaceWithPosition(5, 5));
-            mPieces = mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(5, 5), getBoardSpaceWithPosition(3, 3));
-            mPieces = mGame.move(playerTurn.BLACK, mPieces, getPieceWithPosition(3, 3), getBoardSpaceWithPosition(1, 1));
+            }
+            else if (playingBot == false && mPlayerTurn == playerTurn.BLACK)
+            {
+
+            }
+
+            else if (playingBot == true && mPlayerTurn == playerTurn.BLACK)
+            {
+
+            }
 
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
 
