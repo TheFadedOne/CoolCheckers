@@ -52,6 +52,14 @@
             android:layout_width="150dp"
             android:layout_height="150dp" />
 
+        //delete this
+        <RadioButton
+            android:id="@+id/radio_ruby2"
+            android:text="@string/board4"
+            android:drawableTop="@drawable/checkerboardruby"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+
     </RadioGroup>
 
 
