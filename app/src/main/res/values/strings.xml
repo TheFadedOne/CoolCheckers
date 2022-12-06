@@ -10,10 +10,10 @@
 
     //for shop
     <string name="change_color">Board Colors:</string>
-    <string name="board1">Green Board</string>
-    <string name="board2">Brown Board</string>
-    <string name="board3">Gray Board</string>
-    <string name="board4">Blue Board</string>
+    <string name="board1">Brown Board</string>
+    <string name="board2">Green Board</string>
+    <string name="board3">Ice Board</string>
+    <string name="board4">Ruby Board</string>
 
     //for rules
     <string name="rules">How to play:</string>
