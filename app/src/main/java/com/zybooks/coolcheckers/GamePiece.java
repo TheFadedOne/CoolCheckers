@@ -1,6 +1,8 @@
 package com.zybooks.coolcheckers;
 
 
+import android.view.View;
+
 public class GamePiece {
 
     public pieceColor mPieceColor;

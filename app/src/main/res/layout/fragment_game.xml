@@ -36,133 +36,197 @@
         tools:visibility="visible">
 
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space11"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space12"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space13"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space14"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space15"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space16"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space17"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space18"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space21"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space22"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space23"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space24"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space25"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space26"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space27"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space28"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space31"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space32"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space33"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space34"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space35"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space36"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space37"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space38"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space41"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space42"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space43"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space44"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space45"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space46"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space47"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space48"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space51"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space52"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space53"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space54"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space55"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space56"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space57"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space58"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space61"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space62"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space63"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space64"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space65"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space66"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space67"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space68"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space71"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space72"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space73"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space74"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space75"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space76"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space77"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space78"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space81"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space82"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space83"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space84"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space85"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space86"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space87"/>
 
-        <Button style="@style/BoardPositionButton" />
+        <Button style="@style/BoardPositionButton"
+            android:id="@+id/space88"/>
 
 
     </GridLayout>
@@ -181,8 +245,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible">
 
-        <ImageView style="@style/BoardPositionButton"
-            android:id="@+id/p1"/>
+        <ImageView style="@style/BoardPositionButton" />
 
         <ImageView style="@style/BoardPositionButton" />
 

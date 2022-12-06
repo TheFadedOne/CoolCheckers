@@ -87,13 +87,13 @@ public class GameFragment extends Fragment {
         mPlayerTurn = playerTurn.RED;
 
         updateBoardView();
-        playGame();
+        //playGame();
     }
 
     /*
      * game loop. game does not end until a player does not have any remaining pieces.
      */
-    public void playGame()
+   public void playGame()
     {
         Scanner scan = new Scanner(System.in);
         int pieceIndex;
@@ -120,6 +120,16 @@ public class GameFragment extends Fragment {
 
             gameOver = true;
         }
+
+        View.OnClickListener pieceButton = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int id = (Integer) view.getId();
+                int pieceX = id / 10;
+                int pieceY = id % 10;
+
+            }
+        };
     }
 
 
