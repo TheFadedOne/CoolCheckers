@@ -62,10 +62,6 @@ public class GameFragment extends Fragment {
         piece.setImageDrawable(myIcon);
 
         startGame();
-
-        View shop =
-        setBoardImage();
-
         // Inflate the layout for this fragment
         return parentView;
     }
@@ -102,17 +98,11 @@ public class GameFragment extends Fragment {
     {
         Scanner scan = new Scanner(System.in);
         int pieceIndex;
-<<<<<<< Updated upstream
-        int pieceX = 3;
-        int pieceY = 3;
-        int spaceX = 4;
-        int spaceY = 4;
+        int pieceX = -1;
+        int pieceY = -1;
+        int spaceX = -1;
+        int spaceY = -1;
 
-=======
-        int xCord = -1;
-        int yCord = -1;
-        
->>>>>>> Stashed changes
         while (gameOver == false)
         {
             if (playingBot  == false && mPlayerTurn == playerTurn.RED)
@@ -136,28 +126,11 @@ public class GameFragment extends Fragment {
             }
 
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
-
             updateBoardView();
             gameOver = (checkGameOverState()) ? true : false;
+            gameOver = true;
         }
-<<<<<<< Updated upstream
-=======
 
-        // getting child count index and running it through
-        View.OnClickListener pieceButton = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int id = (Integer) view.getId();
-                MotionEvent event = null;
-                int spaceX = (int)event.getX();
-                int spaceY = (int)event.getY();
-                int pieceX = (int)event.getX();
-                int pieceY = (int)event.getY();
-                
-
-            }
-        };
->>>>>>> Stashed changes
     }
 
     /*
@@ -251,7 +224,6 @@ public class GameFragment extends Fragment {
         }
         return selectedSpace;
     }
-
 
     public int getXFromButtonIndex(int i) {
         return (i % 8) + 1;
