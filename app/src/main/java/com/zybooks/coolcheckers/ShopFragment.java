@@ -36,7 +36,7 @@ public class ShopFragment extends Fragment {
         RadioButton radio = rootView.findViewById(radioId);
         radio.setChecked(true);
 
-        RadioGroup shopRadioGroup = rootView.findViewById(R.id.radio_buttons);
+        RadioGroup shopRadioGroup = rootView.findViewById(R.id.shop_buttons);
         for (int i = 0; i < shopRadioGroup.getChildCount(); i++) {
             radio = (RadioButton) shopRadioGroup.getChildAt(i);
             radio.setOnClickListener(this::boardChange);

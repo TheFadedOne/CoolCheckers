@@ -16,7 +16,7 @@
         android:padding="30dp"/>
 
     <RadioGroup
-        android:id="@+id/radio_buttons"
+        android:id="@+id/shop_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

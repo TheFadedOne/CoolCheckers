@@ -2,6 +2,8 @@ package com.zybooks.coolcheckers;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -59,6 +61,9 @@ public class GameFragment extends Fragment {
         piece.setImageDrawable(myIcon);
 
         startGame();
+
+        View shop =
+        setBoardImage();
 
         // Inflate the layout for this fragment
         return parentView;
@@ -233,5 +238,11 @@ public class GameFragment extends Fragment {
         y-=1;
         int index = ((y * 8) + x);
         return index;
+    }
+
+    public void setBoardImage(View view){
+
+
+
     }
 }
