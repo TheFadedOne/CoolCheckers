@@ -1,27 +1,16 @@
 package com.zybooks.coolcheckers;
 
-import android.animation.ObjectAnimator;
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
-import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
-
-import android.os.CountDownTimer;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import java.util.Scanner;
 
 
@@ -38,6 +27,7 @@ public class GameFragment extends Fragment {
     public boolean gameOver;
     public boolean playingBot = true;
     public playerTurn mPlayerTurn;
+    private Menu mMenu;
 
     public GameFragment() {
         // Required empty public constructor
@@ -48,27 +38,32 @@ public class GameFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View parentView = inflater.inflate(R.layout.fragment_game, container, false);
-
-        //Gives every button the same click listener
-        mCheckerBoard = parentView.findViewById(R.id.CheckerGameBoard);
-        for (int i = 0; i < mCheckerBoard.getChildCount(); i++) {
-            Button spaceButton = (Button) mCheckerBoard.getChildAt(i);
-            spaceButton.setOnClickListener(this::onBoardSpaceClick);
-        }
+        
 
         mCheckerBoardImages = parentView.findViewById(R.id.CheckerGameBoardImages);
         ImageView piece = (ImageView) mCheckerBoardImages.getChildAt(0);
         Drawable myIcon = getResources().getDrawable(R.drawable.redpiece);
         piece.setImageDrawable(myIcon);
 
+
+
+        Drawable standard = getResources().getDrawable(R.drawable.checkerboard);
+        Drawable green = getResources().getDrawable(R.drawable.checkerboardgreen);
+        Drawable ice = getResources().getDrawable(R.drawable.checkerboardice);
+        Drawable ruby = getResources().getDrawable(R.drawable.checkerboardruby);
+        ImageView board = parentView.findViewById(R.id.board);
+        board.setImageDrawable(ruby);
+
+
+
         startGame();
 
-        View shop =
-        setBoardImage();
 
         // Inflate the layout for this fragment
         return parentView;
     }
+
+
 
     //Click listener for all the buttons
     private void onBoardSpaceClick(View view)
@@ -100,19 +95,16 @@ public class GameFragment extends Fragment {
      */
     public void playGame()
     {
-        Scanner scan = new Scanner(System.in);
+
         int pieceIndex;
-<<<<<<< Updated upstream
         int pieceX = 3;
         int pieceY = 3;
         int spaceX = 4;
         int spaceY = 4;
 
-=======
         int xCord = -1;
         int yCord = -1;
-        
->>>>>>> Stashed changes
+
         while (gameOver == false)
         {
             if (playingBot  == false && mPlayerTurn == playerTurn.RED)
@@ -138,10 +130,8 @@ public class GameFragment extends Fragment {
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
 
             updateBoardView();
-            gameOver = (checkGameOverState()) ? true : false;
+            gameOver = (checkGameOverState() == true) ? false : true;
         }
-<<<<<<< Updated upstream
-=======
 
         // getting child count index and running it through
         View.OnClickListener pieceButton = new View.OnClickListener() {
@@ -157,7 +147,6 @@ public class GameFragment extends Fragment {
 
             }
         };
->>>>>>> Stashed changes
     }
 
     /*
@@ -273,4 +262,5 @@ public class GameFragment extends Fragment {
 
 
     }
+
 }
