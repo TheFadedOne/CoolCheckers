@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/beige"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/rules_text"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:text="@string/rules"
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/gameplay_text"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:text="@string/game_play"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/GP_rule_text"
+        android:text="@string/game_play_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/move_text"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:text="@string/move"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/move_rule_text"
+        android:text="@string/move_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/move_rule_text2"
+        android:text="@string/move_rule2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/capture_text"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:text="@string/capture"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/capture_rule_text"
+        android:text="@string/capture_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/capture_rule_text2"
+        android:text="@string/capture_rule2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/upgrade_text"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:text="@string/upgrade"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/upgrade_rule_text"
+        android:text="@string/upgrade_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/upgrade_rule_text2"
+        android:text="@string/upgrade_rule2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/end_text"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:text="@string/end"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/end_rule_text"
+        android:text="@string/end_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+</LinearLayout>

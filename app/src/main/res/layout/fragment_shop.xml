@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ShopFragment">
+    android:layout_height="wrap_content"
+    android:background="@color/beige"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/change_color"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="30dp"/>
 
-</FrameLayout>
+    <RadioGroup
+        android:id="@+id/radio_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/radio_brown"
+            android:text="@string/board2"
+            android:buttonTint="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/shop_text"/>
+
+        <RadioButton
+            android:id="@+id/radio_dirty_green"
+            android:text="@string/board1"
+            android:textColor="@color/dirty_green"
+            android:buttonTint="@color/dirty_green"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/shop_text"/>
+
+        <RadioButton
+            android:id="@+id/radio_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/radio_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+
+</LinearLayout>

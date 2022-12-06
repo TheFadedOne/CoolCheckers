@@ -1,14 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameFragment">
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:context=".MainActivity"
+    tools:visibility="visible">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:src="@drawable/checkerboard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+    </ImageView>
+
+
+    <GridLayout
+        android:id="@+id/CheckerGameBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:columnCount="8"
+        android:rowCount="8"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
+        tools:visibility="visible">
+
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+        <Button style="@style/BoardPositionButton" />
+
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/CheckerGameBoardImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:columnCount="8"
+        android:rowCount="8"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <ImageView style="@style/BoardPositionButton"
+            android:id="@+id/p1"/>
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+        <ImageView style="@style/BoardPositionButton" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
