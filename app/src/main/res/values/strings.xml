@@ -6,6 +6,7 @@
     //try out nav
     <string name="game">Game</string>
     <string name="shop">Shop</string>
+    <string name="boards">Boards</string>
     <string name="rules_nav">Rules</string>
 
     //for shop

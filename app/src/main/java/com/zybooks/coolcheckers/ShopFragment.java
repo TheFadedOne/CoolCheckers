@@ -17,23 +17,23 @@ public class ShopFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_shop, container, false);
-
         SharedPreferences sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE);
-        int colorId = sharedPref.getInt("color", R.color.dark_square);
 
-        int radioId = R.id.radio_brown;
+        //added
+        int boardColor = sharedPref.getInt("drawable", R.drawable.checkerboard);
+        int board_radio = R.id.radio_brown;
 
-        if (colorId == R.color.green) {
-            radioId = R.id.radio_green;
+        if(boardColor == R.drawable.checkerboardgreen){
+            board_radio = R.id.radio_green;
         }
-        else if (colorId == R.color.ice) {
-            radioId = R.id.radio_ice;
+        else if(boardColor == R.drawable.checkerboardice){
+            board_radio = R.id.radio_ice;
         }
-        else if (colorId == R.color.ruby) {
-            radioId = R.id.radio_ruby;
+        else if(boardColor == R.drawable.checkerboardruby){
+            board_radio = R.id.radio_ruby;
         }
 
-        RadioButton radio = rootView.findViewById(radioId);
+        RadioButton radio = rootView.findViewById(board_radio);
         radio.setChecked(true);
 
         RadioGroup shopRadioGroup = rootView.findViewById(R.id.shop_buttons);
@@ -48,22 +48,25 @@ public class ShopFragment extends Fragment {
     private void boardChange(View view) {
         int colorId = R.color.dark_square;
 
-        if (view.getId() == R.id.radio_green) {
+        //added
+        int boardColor = R.drawable.checkerboard;
 
-            colorId = R.color.green;
+        if(view.getId() == R.id.radio_green){
+            boardColor = R.drawable.checkerboardgreen;
+        }
+        else if(view.getId() == R.id.radio_ice){
+            boardColor = R.drawable.checkerboardice;
+        }
+        else if(view.getId() == R.id.radio_ruby){
+            boardColor = R.drawable.checkerboardruby;
 
-        } else if (view.getId() == R.id.radio_ice) {
-
-            colorId = R.color.ice;
-
-        } else if (view.getId() == R.id.radio_ruby) {
-
-            colorId = R.color.ruby;
         }
 
         SharedPreferences sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("color", colorId);
+        //added
+        editor.putInt("drawable", boardColor);
         editor.apply();
+
     }
 }

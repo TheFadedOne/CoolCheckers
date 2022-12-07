@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 
+import java.util.Random;
 
 
 public class GameFragment extends Fragment {
@@ -28,6 +30,9 @@ public class GameFragment extends Fragment {
     private Menu mMenu;
     public boolean pieceToMoveSelected = false;
 
+    private Button mChangeBoardButton;
+    private ImageView mCheckerBoardImage;
+
     public GameFragment() {
         // Required empty public constructor
     }
@@ -42,6 +47,9 @@ public class GameFragment extends Fragment {
         mMoveSelectionBoxes = parentView.findViewById(R.id.MoveInputs);
         mCheckerBoardImageButtons = parentView.findViewById(R.id.CheckerImageButtons);
 
+        mChangeBoardButton = parentView.findViewById(R.id.changeBoardButton);
+        mCheckerBoardImage = parentView.findViewById(R.id.board);
+
         setupGame();
 
         /*
@@ -52,12 +60,43 @@ public class GameFragment extends Fragment {
             mCheckerBoardImageButtons.getChildAt(i).setOnClickListener(this::onBoardSpaceClick);
         }
 
+
+        mChangeBoardButton.setOnClickListener(this:: onChangeBoardClick);
+
         // Inflate the layout for this fragment
         return parentView;
     }
 
+    private void onChangeBoardClick(View view) {
 
+        Random random = new Random();
+        int randomBoard = random.nextInt(4);
 
+        Drawable standard = getResources().getDrawable(R.drawable.checkerboard);
+        Drawable green = getResources().getDrawable(R.drawable.checkerboardgreen);
+        Drawable ice = getResources().getDrawable(R.drawable.checkerboardice);
+        Drawable ruby = getResources().getDrawable(R.drawable.checkerboardruby);
+
+        switch(randomBoard) {
+
+            case 0:
+                mCheckerBoardImage.setImageDrawable(standard);
+                break;
+
+            case 1:
+                mCheckerBoardImage.setImageDrawable(green);
+                break;
+
+            case 2:
+                mCheckerBoardImage.setImageDrawable(ice);
+                break;
+
+            case 3:
+                mCheckerBoardImage.setImageDrawable(ruby);
+                break;
+        }
+
+    }
 
 
     /*
@@ -75,7 +114,6 @@ public class GameFragment extends Fragment {
         mPlayerTurn = playerTurn.RED;
 
         updateBoardView();
-        //playGame();
     }
 
 

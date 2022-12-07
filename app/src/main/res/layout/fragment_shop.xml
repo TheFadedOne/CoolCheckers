@@ -4,21 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/beige"
+    android:padding="20dp"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/change_color"
-        android:textSize="50sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:gravity="center"
-        android:padding="30dp"/>
+        android:gravity="center" />
 
     <RadioGroup
         android:id="@+id/shop_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:layout_gravity="center"
         android:orientation="vertical" >
 
@@ -26,41 +27,31 @@
             android:id="@+id/radio_brown"
             android:text="@string/board1"
             android:drawableTop="@drawable/checkerboard"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             style="@style/shop_text"/>
 
         <RadioButton
             android:id="@+id/radio_green"
             android:text="@string/board2"
             android:drawableTop="@drawable/checkerboardgreen"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             style="@style/shop_text"/>
 
         <RadioButton
             android:id="@+id/radio_ice"
             android:text="@string/board3"
             android:drawableTop="@drawable/checkerboardice"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
+            android:layout_width="130dp"
+            android:layout_height="130dp" />
 
         <RadioButton
             android:id="@+id/radio_ruby"
             android:text="@string/board4"
             android:drawableTop="@drawable/checkerboardruby"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
-
-        //delete this
-        <RadioButton
-            android:id="@+id/radio_ruby2"
-            android:text="@string/board4"
-            android:drawableTop="@drawable/checkerboardruby"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
-
+            android:layout_width="130dp"
+            android:layout_height="130dp" />
     </RadioGroup>
-
 
 </LinearLayout>
