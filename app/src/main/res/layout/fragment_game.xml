@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -23,6 +22,55 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
+
+    <GridLayout
+        android:id="@+id/MoveInputs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:columnCount="5"
+        android:rowCount="1"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <EditText
+            android:id="@+id/pieceX"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:inputType="text"
+            android:text="pieceX"/>
+
+        <EditText
+            android:id="@+id/pieceY"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:inputType="text"
+            android:text="pieceY"/>
+
+        <EditText
+            android:id="@+id/spaceX"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:inputType="text"
+            android:text="spaceX"/>
+
+        <EditText
+            android:id="@+id/spaceY"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:inputType="text"
+            android:text="spaceX"/>
+
+        <Button
+            android:id="@+id/confirm_move_button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Confirm"/>
+
+    </GridLayout>
 
 
     <GridLayout
@@ -169,93 +217,6 @@
         <ImageView style="@style/BoardPositionButton" />
 
     </GridLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:id="@+id/PieceInput"
-            android:layout_width="410dp"
-            android:layout_height="48dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="590dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/CheckerGameBoardImages"
-            tools:ignore="NotSibling">
-
-            <EditText
-                android:id="@+id/SpaceX"
-                android:layout_width="108dp"
-                android:layout_height="wrap_content"
-                android:text="SpaceX" />
-
-            <EditText
-                android:id="@+id/SpaceY"
-                android:layout_width="104dp"
-                android:layout_height="wrap_content"
-                android:text="SpaceY" />
-
-            <EditText
-                android:id="@+id/PieceX"
-                android:layout_width="102dp"
-                android:layout_height="wrap_content"
-                android:text="PieceX" />
-
-            <EditText
-                android:id="@+id/PieceY"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="PieceY" />
-
-        </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/confirm_button"
-            android:layout_width="100dp"
-            android:layout_height="48dp"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="638dp"
-            tools:ignore="DuplicateIds,MissingConstraints" />
-            
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <TextView
-                android:id="@+id/confirm_button"
-                android:layout_width="120dp"
-                android:layout_height="48dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2"
-                tools:ignore="DuplicateIds,NotSibling" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Confirm"
-                app:layout_constraintBottom_toBottomOf="@id/CheckerGameBoardImages"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/CheckerGameBoardImages"
-                tools:ignore="NotSibling"
-                tools:layout_editor_absoluteX="166dp"
-                tools:layout_editor_absoluteY="638dp"></Button>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

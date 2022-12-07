@@ -1,7 +1,11 @@
 package com.zybooks.coolcheckers;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.media.metrics.Event;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -9,8 +13,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Scanner;
 
 
@@ -18,6 +26,8 @@ import java.util.Scanner;
 public class GameFragment extends Fragment {
 
     private CheckersGame mGame;
+    private Button mConfirmButton;
+    private GridLayout mMoveSelectionBoxes;
     CheckersGame board = new CheckersGame();
     private GridLayout mCheckerBoard;
     private GridLayout mCheckerBoardImages;
@@ -27,36 +37,74 @@ public class GameFragment extends Fragment {
     public boolean gameOver;
     public boolean playingBot = true;
     public playerTurn mPlayerTurn;
+    public boolean moveReady = false;
     private Menu mMenu;
 
     public GameFragment() {
         // Required empty public constructor
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View parentView = inflater.inflate(R.layout.fragment_game, container, false);
-
-
+        mConfirmButton = parentView.findViewById(R.id.confirm_move_button);
+        mMoveSelectionBoxes = parentView.findViewById(R.id.MoveInputs);
         mCheckerBoardImages = parentView.findViewById(R.id.CheckerGameBoardImages);
-        ImageView piece = (ImageView) mCheckerBoardImages.getChildAt(0);
-        Drawable myIcon = getResources().getDrawable(R.drawable.redpiece);
-        piece.setImageDrawable(myIcon);
+
+        setupGame();
+
+        /*
+         * click listener for the confirm move button
+         */
+        mConfirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pieceX = -1;
+                int pieceY = -1;
+                int spaceX = -1;
+                int spaceY = -1;
+
+                EditText pX = mMoveSelectionBoxes.findViewById(R.id.pieceX);
+                EditText pY = mMoveSelectionBoxes.findViewById(R.id.pieceY);
+                EditText sX = mMoveSelectionBoxes.findViewById(R.id.spaceX);
+                EditText sY = mMoveSelectionBoxes.findViewById(R.id.spaceY);
+
+                pieceX = Integer.parseInt(pX.getText().toString());
+                pieceY = Integer.parseInt(pY.getText().toString());
+                spaceX = Integer.parseInt(sX.getText().toString());
+                spaceY = Integer.parseInt(sY.getText().toString());
 
 
+                if (mPlayerTurn == playerTurn.RED) {
+                    mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+                    mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+                }
+                if (playingBot == false && mPlayerTurn == playerTurn.BLACK) {
+                    mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+                    mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+                }
+                if (playingBot == true && mPlayerTurn == playerTurn.BLACK) {
+                    //rather than a human inputting a piece and board space, an automated process will input these arguments
 
-        Drawable standard = getResources().getDrawable(R.drawable.checkerboard);
-        Drawable green = getResources().getDrawable(R.drawable.checkerboardgreen);
-        Drawable ice = getResources().getDrawable(R.drawable.checkerboardice);
-        Drawable ruby = getResources().getDrawable(R.drawable.checkerboardruby);
-        ImageView board = parentView.findViewById(R.id.board);
-        board.setImageDrawable(ruby);
+                    int[] botMove = new int[4];
+                    CheckBot cb = new CheckBot(mPieces, mBoardSpaces);
+                    botMove = cb.generateMove(mPieces, mBoardSpaces, mPlayerTurn);
+
+                    mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(botMove[0], botMove[1]), getBoardSpaceWithPosition(botMove[2], botMove[3]));
+                    mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+                }
 
 
+                updateBoardView();
 
-        startGame();
+                gameOver = (checkGameOverState() == true) ? true : false;
+
+            }
+        });
+
 
         // Inflate the layout for this fragment
         return parentView;
@@ -64,17 +112,10 @@ public class GameFragment extends Fragment {
 
 
 
-    //Click listener for all the buttons
-    private void onBoardSpaceClick(View view)
-    {
-
-    }
-
-
     /*
      * initial setup for the game
      */
-    public void startGame()
+    public void setupGame()
     {
         mGame = new CheckersGame();
         mPieces = new GamePiece[24];
@@ -86,7 +127,7 @@ public class GameFragment extends Fragment {
         mPlayerTurn = playerTurn.RED;
 
         updateBoardView();
-        playGame();
+        //playGame();
     }
 
     /*
@@ -102,21 +143,25 @@ public class GameFragment extends Fragment {
         int spaceX = -1;
         int spaceY = -1;
 
-        int xCord = -1;
-        int yCord = -1;
+        EditText pX = mMoveSelectionBoxes.findViewById(R.id.pieceX);
+        EditText pY = mMoveSelectionBoxes.findViewById(R.id.pieceY);
+        EditText sX = mMoveSelectionBoxes.findViewById(R.id.spaceX);
+        EditText sY = mMoveSelectionBoxes.findViewById(R.id.spaceY);
 
-        while (gameOver == false)
+        pieceX = Integer.parseInt(pX.getText().toString());
+        pieceY = Integer.parseInt(pY.getText().toString());
+        spaceX = Integer.parseInt(sX.getText().toString());
+        spaceY = Integer.parseInt(sY.getText().toString());
+
+
+
+        while (checkGameOverState())
         {
-            if (playingBot  == false && mPlayerTurn == playerTurn.RED)
-            {
+            if (playingBot == false && mPlayerTurn == playerTurn.RED) {
                 mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
-            }
-            else if (playingBot  == false && mPlayerTurn == playerTurn.BLACK)
-            {
+            } else if (playingBot == false && mPlayerTurn == playerTurn.BLACK) {
                 mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
-            }
-            else if (playingBot == true && mPlayerTurn == playerTurn.BLACK)
-            {
+            } else if (playingBot == true && mPlayerTurn == playerTurn.BLACK) {
                 //rather than a human inputting a piece and board space, an automated process will input these arguments
 
                 int[] botMove = new int[4];
@@ -124,22 +169,14 @@ public class GameFragment extends Fragment {
                 botMove = cb.generateMove(mPieces, mBoardSpaces, mPlayerTurn);
 
                 mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(botMove[0], botMove[1]), getBoardSpaceWithPosition(botMove[2], botMove[3]));
-
             }
 
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
             updateBoardView();
 
-            gameOver = (checkGameOverState() == true) ? false : true;
-
-
+            gameOver = (checkGameOverState() == true) ? true : false;
         }
-
     }
-
-
-
-
 
     /*
      * Updates the images of the image views to reflect the positions of the checker
