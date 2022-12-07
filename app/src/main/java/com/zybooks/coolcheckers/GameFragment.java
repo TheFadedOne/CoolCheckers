@@ -129,23 +129,18 @@ public class GameFragment extends Fragment {
 
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
             updateBoardView();
+
             gameOver = (checkGameOverState() == true) ? false : true;
+
+
+            gameOver = (checkGameOverState() == true) ? false : true;
+        }
+
+
         }
     }
 
-        // getting child count index and running it through
-        View.OnClickListener pieceButton = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int id = (Integer) view.getId();
-                MotionEvent event = null;
-                int spaceX = (int)event.getX();
-                int spaceY = (int)event.getY();
-                int pieceX = (int)event.getX();
-                int pieceY = (int)event.getY();
-                
 
-            }
         };
 
 

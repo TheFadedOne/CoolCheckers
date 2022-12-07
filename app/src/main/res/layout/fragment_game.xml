@@ -179,7 +179,7 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="590dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/CheckerGameBoard"
+            app:layout_constraintBottom_toBottomOf="@id/CheckerGameBoardImages"
             tools:ignore="NotSibling">
 
             <EditText
@@ -208,6 +208,7 @@
 
         </LinearLayout>
 
+
         <TextView
             android:id="@+id/confirm_button"
             android:layout_width="100dp"
@@ -216,6 +217,35 @@
             tools:layout_editor_absoluteY="638dp"
             tools:ignore="MissingConstraints" />
             
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+            <TextView
+                android:id="@+id/confirm_button"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/CheckerGameBoardImages"
+                tools:ignore="NotSibling"
+                tools:layout_editor_absoluteX="150dp"
+                tools:layout_editor_absoluteY="638dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Confirm"
+                tools:layout_editor_absoluteX="166dp"
+                tools:layout_editor_absoluteY="638dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/CheckerGameBoardImages"
+                app:layout_constraintBottom_toBottomOf="@id/CheckerGameBoardImages"
+                tools:ignore="NotSibling"></Button>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
