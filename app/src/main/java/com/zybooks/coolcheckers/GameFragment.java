@@ -130,11 +130,11 @@ public class GameFragment extends Fragment {
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
             updateBoardView();
 
-            gameOver = (checkGameOverState()) ? true : false;
+            gameOver = (checkGameOverState() == true) ? false : true;
         }
 
 
-            gameOver = (checkGameOverState() == true) ? false : true;
+
         }
 
         // getting child count index and running it through
@@ -151,7 +151,6 @@ public class GameFragment extends Fragment {
 
             }
         };
-    }
 
     /*
      * Updates the images of the image views to reflect the positions of the checker
