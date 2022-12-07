@@ -5,59 +5,52 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridLayout;
-import android.widget.ImageView;
-import java.util.Scanner;
 
 
 
 public class GameFragment extends Fragment {
 
     private CheckersGame mGame;
+    private Button mConfirmButton;
+    private GridLayout mMoveSelectionBoxes;
     CheckersGame board = new CheckersGame();
-    private GridLayout mCheckerBoard;
-    private GridLayout mCheckerBoardImages;
+    private GridLayout mCheckerBoardImageButtons;
     public GamePiece[] mPieces;
-    public ImageView[] mPieceImages;
     public BoardSpace[] mBoardSpaces;
     public boolean gameOver;
     public boolean playingBot = true;
     public playerTurn mPlayerTurn;
     private Menu mMenu;
+    public boolean pieceToMoveSelected = false;
 
     public GameFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View parentView = inflater.inflate(R.layout.fragment_game, container, false);
-        
+        mConfirmButton = parentView.findViewById(R.id.confirm_move_button);
+        mMoveSelectionBoxes = parentView.findViewById(R.id.MoveInputs);
+        mCheckerBoardImageButtons = parentView.findViewById(R.id.CheckerImageButtons);
 
-        mCheckerBoardImages = parentView.findViewById(R.id.CheckerGameBoardImages);
-        ImageView piece = (ImageView) mCheckerBoardImages.getChildAt(0);
-        Drawable myIcon = getResources().getDrawable(R.drawable.redpiece);
-        piece.setImageDrawable(myIcon);
+        setupGame();
 
-
-
-        Drawable standard = getResources().getDrawable(R.drawable.checkerboard);
-        Drawable green = getResources().getDrawable(R.drawable.checkerboardgreen);
-        Drawable ice = getResources().getDrawable(R.drawable.checkerboardice);
-        Drawable ruby = getResources().getDrawable(R.drawable.checkerboardruby);
-        ImageView board = parentView.findViewById(R.id.board);
-        board.setImageDrawable(ruby);
-
-
-
-        startGame();
-
+        /*
+         * sets click listener for all 24 game piece image buttons
+         */
+        for (int i = 0; i < 64; ++i)
+        {
+            mCheckerBoardImageButtons.getChildAt(i).setOnClickListener(this::onBoardSpaceClick);
+        }
 
         // Inflate the layout for this fragment
         return parentView;
@@ -65,17 +58,12 @@ public class GameFragment extends Fragment {
 
 
 
-    //Click listener for all the buttons
-    private void onBoardSpaceClick(View view)
-    {
-
-    }
 
 
     /*
      * initial setup for the game
      */
-    public void startGame()
+    public void setupGame()
     {
         mGame = new CheckersGame();
         mPieces = new GamePiece[24];
@@ -87,67 +75,77 @@ public class GameFragment extends Fragment {
         mPlayerTurn = playerTurn.RED;
 
         updateBoardView();
-        playGame();
+        //playGame();
     }
 
-    /*
-     * game loop. game does not end until a player does not have any remaining pieces.
-     */
-    public void playGame()
-    {
 
-        int pieceIndex;
+
+
+
+    /*
+     * Action taken when button clicked
+     */
+    private void onBoardSpaceClick(View view) {
+
         int pieceX = 3;
         int pieceY = 3;
         int spaceX = 4;
         int spaceY = 4;
 
-        int xCord = -1;
-        int yCord = -1;
-
-        while (gameOver == false)
+        int buttonIndex = 0;
+        for (int i = 0; i < 64; ++i)
         {
-            if (playingBot  == false && mPlayerTurn == playerTurn.RED)
+            if (mCheckerBoardImageButtons.getChildAt(i) == (Button)view)
             {
-                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+                buttonIndex = i;
             }
-            else if (playingBot  == false && mPlayerTurn == playerTurn.BLACK)
-            {
-                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
-            }
-            else if (playingBot == true && mPlayerTurn == playerTurn.BLACK)
-            {
-                //rather than a human inputting a piece and board space, an automated process will input these arguments
-
-                int[] botMove = new int[4];
-                CheckBot cb = new CheckBot(mPieces, mBoardSpaces);
-                botMove = cb.generateMove(mPieces, mBoardSpaces, mPlayerTurn);
-
-                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(botMove[0], botMove[1]), getBoardSpaceWithPosition(botMove[2], botMove[3]));
-
-            }
-
-            mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
-
-            updateBoardView();
-            gameOver = (checkGameOverState() == true) ? false : true;
         }
 
-        // getting child count index and running it through
-        View.OnClickListener pieceButton = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int id = (Integer) view.getId();
-                MotionEvent event = null;
-                int spaceX = (int)event.getX();
-                int spaceY = (int)event.getY();
-                int pieceX = (int)event.getX();
-                int pieceY = (int)event.getY();
-                
-
-            }
-        };
+        if (pieceToMoveSelected == false)
+        {
+            pieceX = getXFromButtonIndex(buttonIndex);
+            pieceY = getYFromButtonIndex(buttonIndex);
+            pieceToMoveSelected = true;
+        }
+        else if (pieceToMoveSelected == true)
+        {
+            spaceX = getXFromButtonIndex(buttonIndex);
+            spaceY = getYFromButtonIndex(buttonIndex);
+            movePiece(pieceX, pieceY, spaceX, spaceY);
+        }
     }
+
+
+
+
+
+    public void movePiece(int pieceX, int pieceY, int spaceX, int spaceY)
+    {
+        if (mPlayerTurn == playerTurn.RED) {
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+            mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+        }
+        if (playingBot == false && mPlayerTurn == playerTurn.BLACK) {
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+            mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+        }
+        if (playingBot == true && mPlayerTurn == playerTurn.BLACK) {
+            //rather than a human inputting a piece and board space, an automated process will input these arguments
+
+            int[] botMove = new int[4];
+            CheckBot cb = new CheckBot(mPieces, mBoardSpaces);
+            botMove = cb.generateMove(mPieces, mBoardSpaces, mPlayerTurn);
+
+            mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(botMove[0], botMove[1]), getBoardSpaceWithPosition(botMove[2], botMove[3]));
+            mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+        }
+        pieceToMoveSelected = false;
+
+        updateBoardView();
+    }
+
+
+
 
     /*
      * Updates the images of the image views to reflect the positions of the checker
@@ -155,32 +153,33 @@ public class GameFragment extends Fragment {
      */
     public void updateBoardView()
     {
-        ImageView boardImage;
+        Button boardImage;
         Drawable red = getResources().getDrawable(R.drawable.redpiece);
         Drawable redKing = getResources().getDrawable(R.drawable.redpieceking);
         Drawable black = getResources().getDrawable(R.drawable.blackpiece);
         Drawable blackKing = getResources().getDrawable(R.drawable.blackpieceking);
         for (int i = 0; i < 64; ++i)
         {
-            boardImage = (ImageView) mCheckerBoardImages.getChildAt(i);
-            boardImage.setImageDrawable(null);
+            boardImage = (Button) mCheckerBoardImageButtons.getChildAt(i);
+            boardImage.setBackground(null);
             for (int j = 0; j < 24; ++j)
             {
                 if (getXFromButtonIndex(i) == mPieces[j].getX()
                         && getYFromButtonIndex(i) == mPieces[j].getY())
                 {
                     if (!mPieces[j].crowned && mPieces[j].getColor() == pieceColor.RED)
-                    {boardImage.setImageDrawable(red);}
+                    {boardImage.setBackground(red);}
                     else if (mPieces[j].crowned && mPieces[j].getColor() == pieceColor.RED)
-                    {boardImage.setImageDrawable(redKing);}
+                    {boardImage.setBackground(redKing);}
                     else if (!mPieces[j].crowned && mPieces[j].getColor() == pieceColor.BLACK)
-                    {boardImage.setImageDrawable(black);}
+                    {boardImage.setBackground(black);}
                     else if (mPieces[j].crowned && mPieces[j].getColor() == pieceColor.BLACK)
-                    {boardImage.setImageDrawable(blackKing);}
+                    {boardImage.setBackground(blackKing);}
                 }
             }
         }
     }
+
 
 
     public boolean checkGameOverState()
@@ -241,14 +240,36 @@ public class GameFragment extends Fragment {
         return selectedSpace;
     }
 
-
     public int getXFromButtonIndex(int i) {
         return (i % 8) + 1;
+    }
+
+    public int getXFromButton(Button button) {
+        for (int i = 0; i < 64; ++i)
+        {
+            if (mCheckerBoardImageButtons.getChildAt(i) == button)
+            {
+                return (i % 8) + 1;
+            }
+        }
+        return 0;
     }
 
     public int getYFromButtonIndex(int i) {
         return (i / 8) + 1;
     }
+
+    public int getYFromButton(Button button) {
+        for (int i = 0; i < 64; ++i)
+        {
+            if (mCheckerBoardImageButtons.getChildAt(i) == button)
+            {
+                return (i / 8) + 1;
+            }
+        }
+        return 0;
+    }
+
 
     public int getButtonIndexFromPosition (int x, int y) {
         x-=1;
@@ -256,6 +277,7 @@ public class GameFragment extends Fragment {
         int index = ((y * 8) + x);
         return index;
     }
+
 
     public void setBoardImage(View view){
 

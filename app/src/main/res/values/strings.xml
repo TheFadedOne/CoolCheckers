@@ -34,4 +34,7 @@
     <string name="end_rule">A player wins the game when the opponent cannot make a move.</string>
 
 
+    //test
+    <string name="testToast">You clicked the button!</string>
+
 </resources>
