@@ -10,7 +10,6 @@
     tools:visibility="visible">
 
 
-
     <ImageView
         android:layout_width="360dp"
         android:layout_height="360dp"

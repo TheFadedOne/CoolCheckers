@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 
+import java.util.Random;
 
 
 public class GameFragment extends Fragment {
@@ -52,6 +54,9 @@ public class GameFragment extends Fragment {
             mCheckerBoardImageButtons.getChildAt(i).setOnClickListener(this::onBoardSpaceClick);
         }
 
+
+
+
         // Inflate the layout for this fragment
         return parentView;
     }
@@ -75,11 +80,7 @@ public class GameFragment extends Fragment {
         mPlayerTurn = playerTurn.RED;
 
         updateBoardView();
-        //playGame();
     }
-
-
-
 
 
     /*
