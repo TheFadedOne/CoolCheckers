@@ -74,7 +74,7 @@
 
 
     <GridLayout
-        android:id="@+id/CheckerGameBoardImages"
+        android:id="@+id/CheckerImageButtons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
@@ -87,136 +87,76 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible">
 
-        <ImageView style="@style/BoardPositionButton"
-            android:id="@+id/p1"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
+        <androidx.appcompat.widget.AppCompatButton style="@style/BoardPositionButton"/>
 
-        <ImageView style="@style/BoardPositionButton" />
 
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
-
-        <ImageView style="@style/BoardPositionButton" />
 
     </GridLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
