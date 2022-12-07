@@ -38,7 +38,7 @@ public class GameFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View parentView = inflater.inflate(R.layout.fragment_game, container, false);
-        
+
 
         mCheckerBoardImages = parentView.findViewById(R.id.CheckerGameBoardImages);
         ImageView piece = (ImageView) mCheckerBoardImages.getChildAt(0);
@@ -131,26 +131,18 @@ public class GameFragment extends Fragment {
             updateBoardView();
 
             gameOver = (checkGameOverState() == true) ? false : true;
+
+
+            gameOver = (checkGameOverState() == true) ? false : true;
         }
 
 
-
         }
+    }
 
-        // getting child count index and running it through
-        View.OnClickListener pieceButton = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int id = (Integer) view.getId();
-                MotionEvent event = null;
-                int spaceX = (int)event.getX();
-                int spaceY = (int)event.getY();
-                int pieceX = (int)event.getX();
-                int pieceY = (int)event.getY();
-                
 
-            }
         };
+
 
     /*
      * Updates the images of the image views to reflect the positions of the checker
