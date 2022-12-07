@@ -214,6 +214,7 @@
             android:layout_height="48dp"
             tools:layout_editor_absoluteX="155dp"
             tools:layout_editor_absoluteY="638dp"
+            tools:ignore="MissingConstraints" />
             
 
 

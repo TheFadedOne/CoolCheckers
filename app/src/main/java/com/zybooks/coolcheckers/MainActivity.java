@@ -25,10 +25,8 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
-
     public Menu mMenu;
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
