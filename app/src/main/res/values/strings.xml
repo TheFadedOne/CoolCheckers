@@ -5,7 +5,7 @@
 
     //try out nav
     <string name="game">Game</string>
-    <string name="shop">Shop</string>
+    <string name="boards">Boards</string>
     <string name="rules_nav">Rules</string>
 
     //for shop
@@ -25,13 +25,14 @@
     <string name="capture">Capture</string>
     <string name="capture_rule">To capture a piece of your opponent, your piece leaps over one of the opponent\'s pieces and lands in a straight diagonal line on the other side. This landing square must be empty.</string>
     <string name="capture_rule2">When a piece is captured, it is removed from the board.</string>
-    //maybe delete the capture rule 3
-    <string name="capture_rule3">Single pieces may shift direction diagonally during a multiple capture turn, but must always jump forward (toward the opponent).</string>
     <string name="upgrade">Upgrade a piece</string>
     <string name="upgrade_rule">When a piece reaches the furthest row, it is crowned and becomes a king.</string>
     <string name="upgrade_rule2">Kings are limited to moving diagonally but can move both forward and backward.</string>
     <string name="end">End of the Game</string>
     <string name="end_rule">A player wins the game when the opponent cannot make a move.</string>
 
+
+    //test
+    <string name="testToast">You clicked the button!</string>
 
 </resources>

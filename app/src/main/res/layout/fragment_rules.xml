@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:background="@color/beige"
-    android:padding="10dp"
+    android:padding="15dp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/rules_text"
-        android:textSize="36sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:text="@string/rules"
         android:layout_width="wrap_content"
@@ -50,14 +50,6 @@
         android:gravity="center"/>
 
     <TextView
-        android:id="@+id/move_rule_text2"
-        android:text="@string/move_rule2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:gravity="center"/>
-
-    <TextView
         android:id="@+id/capture_text"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -71,13 +63,6 @@
         android:text="@string/capture_rule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"/>
-    <TextView
-        android:id="@+id/capture_rule_text2"
-        android:text="@string/capture_rule2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
         android:gravity="center"/>
 
     <TextView
