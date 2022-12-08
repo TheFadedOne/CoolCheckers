@@ -133,15 +133,12 @@ public class GameFragment extends Fragment {
             gameOver = (checkGameOverState() == true) ? false : true;
 
 
-            gameOver = (checkGameOverState() == true) ? false : true;
         }
 
-
-        }
     }
 
 
-        };
+
 
 
     /*
