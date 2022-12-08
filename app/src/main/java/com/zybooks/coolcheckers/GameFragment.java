@@ -26,6 +26,8 @@ public class GameFragment extends Fragment {
     public boolean playingBot = true;
     public playerTurn mPlayerTurn;
     private Menu mMenu;
+    public int tempX = 0;
+    public int tempY = 0;
     public boolean pieceToMoveSelected = false;
 
     private Button mChangeBoardButton;
@@ -119,8 +121,8 @@ public class GameFragment extends Fragment {
 
         int pieceX = 1;
         int pieceY = 3;
-        int spaceX = 4;
-        int spaceY = 4;
+        int spaceX;
+        int spaceY;
 
         int buttonIndex = 0;
         for (int i = 0; i < 64; ++i)
@@ -133,15 +135,18 @@ public class GameFragment extends Fragment {
 
         if (pieceToMoveSelected == false)
         {
-            pieceX = getXFromButtonIndex(buttonIndex);
-            pieceY = getYFromButtonIndex(buttonIndex);
+            tempX = getXFromButtonIndex(buttonIndex);
+            tempY = getYFromButtonIndex(buttonIndex);
             pieceToMoveSelected = true;
         }
         else if (pieceToMoveSelected == true)
         {
+            pieceX = tempX;
+            pieceY = tempY;
             spaceX = getXFromButtonIndex(buttonIndex);
             spaceY = getYFromButtonIndex(buttonIndex);
             movePiece(pieceX, pieceY, spaceX, spaceY);
+            pieceToMoveSelected = false;
         }
     }
 
@@ -159,7 +164,7 @@ public class GameFragment extends Fragment {
             mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
         }
-        if (playingBot == true && mPlayerTurn == playerTurn.BLACK) {
+        if (playingBot == true && mPlayerTurn == playerTurn.BLACK && checkGameOverState() == false) {
             //rather than a human inputting a piece and board space, an automated process will input these arguments
 
             int[] botMove = new int[4];
@@ -169,7 +174,6 @@ public class GameFragment extends Fragment {
             mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(botMove[0], botMove[1]), getBoardSpaceWithPosition(botMove[2], botMove[3]));
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
         }
-        pieceToMoveSelected = false;
 
         updateBoardView();
     }
