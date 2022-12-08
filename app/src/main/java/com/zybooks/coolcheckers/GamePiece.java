@@ -25,6 +25,7 @@ public class GamePiece {
     public void kill()
     {
         captured = true;
+        mPieceColor = pieceColor.NULL;
         xPosition = -1;
         yPosition = -1;
     }
