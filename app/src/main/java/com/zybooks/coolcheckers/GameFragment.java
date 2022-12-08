@@ -131,31 +131,7 @@ public class GameFragment extends Fragment {
             {
                 buttonIndex = i;
             }
-            else if (playingBot  == false && mPlayerTurn == playerTurn.BLACK)
-            {
-                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
-            }
-            else if (playingBot == true && mPlayerTurn == playerTurn.BLACK)
-            {
-                //rather than a human inputting a piece and board space, an automated process will input these arguments
-
-                int[] botMove = new int[4];
-                CheckBot cb = new CheckBot(mPieces, mBoardSpaces);
-                botMove = cb.generateMove(mPieces, mBoardSpaces, mPlayerTurn);
-
-                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(botMove[0], botMove[1]), getBoardSpaceWithPosition(botMove[2], botMove[3]));
-
-            }
-
-            mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
-            updateBoardView();
-
-            gameOver = (checkGameOverState() == true) ? false : true;
-
-
         }
-
-    }
 
         if (pieceToMoveSelected == false)
         {
@@ -172,6 +148,8 @@ public class GameFragment extends Fragment {
             movePiece(pieceX, pieceY, spaceX, spaceY);
             pieceToMoveSelected = false;
         }
+    }
+
 
 
 
@@ -199,6 +177,7 @@ public class GameFragment extends Fragment {
 
         updateBoardView();
     }
+
 
 
 
