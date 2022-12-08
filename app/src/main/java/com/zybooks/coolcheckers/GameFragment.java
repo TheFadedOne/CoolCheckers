@@ -18,8 +18,6 @@ import java.util.Random;
 public class GameFragment extends Fragment {
 
     private CheckersGame mGame;
-    private Button mConfirmButton;
-    private GridLayout mMoveSelectionBoxes;
     CheckersGame board = new CheckersGame();
     private GridLayout mCheckerBoardImageButtons;
     public GamePiece[] mPieces;
@@ -40,8 +38,6 @@ public class GameFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View parentView = inflater.inflate(R.layout.fragment_game, container, false);
-        mConfirmButton = parentView.findViewById(R.id.confirm_move_button);
-        mMoveSelectionBoxes = parentView.findViewById(R.id.MoveInputs);
         mCheckerBoardImageButtons = parentView.findViewById(R.id.CheckerImageButtons);
 
         setupGame();
@@ -88,7 +84,7 @@ public class GameFragment extends Fragment {
      */
     private void onBoardSpaceClick(View view) {
 
-        int pieceX = 3;
+        int pieceX = 1;
         int pieceY = 3;
         int spaceX = 4;
         int spaceY = 4;
