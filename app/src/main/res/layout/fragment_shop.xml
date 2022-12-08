@@ -15,43 +15,38 @@
         android:textStyle="bold"
         android:gravity="center" />
 
-    <RadioGroup
-        android:id="@+id/shop_buttons"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_gravity="center"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/radio_brown"
-            android:text="@string/board1"
-            android:drawableTop="@drawable/checkerboard"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            style="@style/shop_text"/>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/checkerboard"
+            android:padding="10dp">
+        </ImageView>
 
-        <RadioButton
-            android:id="@+id/radio_green"
-            android:text="@string/board2"
-            android:drawableTop="@drawable/checkerboardgreen"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            style="@style/shop_text"/>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/checkerboardgreen"
+            android:padding="10dp">
+        </ImageView>
 
-        <RadioButton
-            android:id="@+id/radio_ice"
-            android:text="@string/board3"
-            android:drawableTop="@drawable/checkerboardice"
-            android:layout_width="130dp"
-            android:layout_height="130dp" />
+    </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radio_ruby"
-            android:text="@string/board4"
-            android:drawableTop="@drawable/checkerboardruby"
-            android:layout_width="130dp"
-            android:layout_height="130dp" />
-    </RadioGroup>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/checkerboardice"
+        android:padding="10dp" >
+    </ImageView>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/checkerboardruby"
+        android:padding="10dp" >
+    </ImageView>
 
 </LinearLayout>

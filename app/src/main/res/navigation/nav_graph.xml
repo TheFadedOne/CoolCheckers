@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_shop"
         android:name="com.zybooks.coolcheckers.ShopFragment"
-        android:label="@string/shop"
+        android:label="@string/boards"
         tools:layout="@layout/fragment_shop" />
 
     <fragment
