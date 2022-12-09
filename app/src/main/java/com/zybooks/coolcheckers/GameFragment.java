@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import java.util.Random;
 
@@ -23,22 +22,20 @@ import java.util.Random;
 public class GameFragment extends Fragment {
 
     private CheckersGame mGame;
-    CheckersGame board = new CheckersGame();
     public GamePiece[] mPieces;
     public BoardSpace[] mBoardSpaces;
     public boolean gameOver;
     public boolean playingBot = false;
     public playerTurn mPlayerTurn;
-    private Menu mMenu;
     public int tempX = 0;
     public int tempY = 0;
     public boolean pieceToMoveSelected = false;
 
-    private GridLayout mCheckerBoardImageButtons;
     private Button mChangeBoardButton;
     private ImageView mCheckerBoardImage;
+    private GridLayout mCheckerBoardImageButtons;
+    private Switch mBotToggleSwitch;
     private TextView mTurnText;
-    private Switch mBotSwitch;
 
     public GameFragment() {
         // Required empty public constructor
@@ -53,8 +50,9 @@ public class GameFragment extends Fragment {
         mCheckerBoardImageButtons = parentView.findViewById(R.id.CheckerImageButtons);
         mChangeBoardButton = parentView.findViewById(R.id.changeBoardButton);
         mCheckerBoardImage = parentView.findViewById(R.id.board);
+        mBotToggleSwitch = parentView.findViewById(R.id.botToggleSwitch);
         mTurnText = parentView.findViewById(R.id.turnDisplayText);
-        mBotSwitch = parentView.findViewById(R.id.botToggleSwitch);
+
 
         setupGame();
 
@@ -66,11 +64,12 @@ public class GameFragment extends Fragment {
             mCheckerBoardImageButtons.getChildAt(i).setOnClickListener(this::onBoardSpaceClick);
         }
 
-        //click listener for board change button
         mChangeBoardButton.setOnClickListener(this:: onChangeBoardClick);
 
         //click listener for bot toggle button
-        mBotSwitch.setOnClickListener(this::onBotToggleClick);
+        mBotToggleSwitch.setOnClickListener(this::onBotToggleClick);
+
+
 
         // Inflate the layout for this fragment
         return parentView;
@@ -87,7 +86,6 @@ public class GameFragment extends Fragment {
         {
             playingBot = false;
         }
-
     }
 
     private void onChangeBoardClick(View view) {
@@ -138,9 +136,6 @@ public class GameFragment extends Fragment {
 
         updateBoardView();
     }
-
-
-
 
 
     /*
@@ -199,9 +194,7 @@ public class GameFragment extends Fragment {
 
     public void movePiece(int pieceX, int pieceY, int spaceX, int spaceY)
     {
-
-        if (mPlayerTurn == playerTurn.RED)
-        {
+        if (mPlayerTurn == playerTurn.RED) {
             mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
             mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
             mTurnText.setText("Turn: BLACK");
@@ -209,28 +202,30 @@ public class GameFragment extends Fragment {
         }
         else if (mPlayerTurn == playerTurn.BLACK)
         {
-             if (playingBot == false)
-             {
-                 mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
-                 mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
-                 mTurnText.setText("Turn: RED");
-                 mTurnText.setTextColor(Color.RED);
-             }
-             else if (playingBot == true)
-             {
-                 //rather than a human inputting a piece and board space, an automated process will input these arguments
+            if (playingBot == false)
+            {
+                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
+                mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+                mTurnText.setText("Turn: RED");
+                mTurnText.setTextColor(Color.RED);
+            }
+            else if (playingBot == true)
+            {
+                //rather than a human inputting a piece and board space, an automated process will input these arguments
 
-                 int[] botMove = new int[4];
-                 CheckBot cb = new CheckBot(mPieces, mBoardSpaces);
-                 botMove = cb.generateMove(mPieces, mBoardSpaces, mPlayerTurn);
+                int[] botMove = new int[4];
+                CheckBot cb = new CheckBot(mPieces, mBoardSpaces);
+                botMove = cb.generateMove(mPieces, mBoardSpaces, mPlayerTurn);
 
-                 mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(botMove[0], botMove[1]), getBoardSpaceWithPosition(botMove[2], botMove[3]));
-                 mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
-                 mTurnText.setText("Turn: RED");
-                 mTurnText.setTextColor(Color.RED);
-             }
+                mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(botMove[0], botMove[1]), getBoardSpaceWithPosition(botMove[2], botMove[3]));
+                mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
+                mTurnText.setText("Turn: RED");
+                mTurnText.setTextColor(Color.RED);
+            }
         }
 
+
+        updateBoardView();
     }
 
 
@@ -285,15 +280,17 @@ public class GameFragment extends Fragment {
             }
         }
 
-        if (redRemaining < 1) {
-            Toast.makeText(getContext(), "Black Player Wins!!!", Toast.LENGTH_SHORT).show();
-            return true;
-        }
-        else if (blackRemaining < 1)
+        if (blackRemaining < 1)
         {
-            Toast.makeText(getContext(), "Red Player Wins!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "RED WINS!!!", Toast.LENGTH_SHORT).show();
             return true;
         }
+        else if (redRemaining < 1)
+        {
+            Toast.makeText(getContext(), "BLACK WINS!!!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
         return false;
     }
 
