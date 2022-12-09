@@ -20,7 +20,7 @@
         <item name="android:layout_height">45dp</item>
     </style>
 
-    //for shop
+    //for board frag
     <style name="shop_text">
         <item name="android:textSize">16sp</item>
         <item name="android:textAlignment">center</item>

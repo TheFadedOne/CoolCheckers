@@ -14,6 +14,7 @@
     <string name="board2">Green Board</string>
     <string name="board3">Ice Board</string>
     <string name="board4">Ruby Board</string>
+    <string name="cb_instructions">Change your board by clicking on the \"Change Board\" button and it will randomly select a board for you! play on which one you think is the best!</string>
 
     //for rules
     <string name="rules">How to play:</string>
@@ -34,5 +35,8 @@
 
     //test
     <string name="testToast">You clicked the button!</string>
+
+    //changeBoard
+    <string name="changeBoardButton">Change Board</string>
 
 </resources>

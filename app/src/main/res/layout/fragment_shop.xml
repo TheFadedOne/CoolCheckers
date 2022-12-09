@@ -11,14 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/change_color"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:textStyle="bold"
-        android:layout_marginBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:layout_gravity="center" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:layout_gravity="center">
 
         <ImageView
@@ -34,6 +36,30 @@
             android:src="@drawable/checkerboardgreen"
             android:padding="10dp">
         </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/board1"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            style="@style/shop_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/board2"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            style="@style/shop_text"/>
 
     </LinearLayout>
 
@@ -57,5 +83,40 @@
         </ImageView>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/board3"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            style="@style/shop_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/board4"
+            android:paddingLeft="45dp"
+            android:paddingRight="30dp"
+            style="@style/shop_text"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/change_board_instruction"
+        android:layout_width="346dp"
+        android:layout_height="146dp"
+        android:layout_gravity="center"
+        android:paddingTop="20dp"
+        android:text="@string/cb_instructions"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
 </LinearLayout>

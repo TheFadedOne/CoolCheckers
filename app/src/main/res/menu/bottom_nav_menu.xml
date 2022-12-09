@@ -7,6 +7,7 @@
 
     <item
         android:id="@+id/navigation_shop"
+        android:icon="@drawable/board_icon_nav"
         android:title="@string/boards" />
 
     <item
