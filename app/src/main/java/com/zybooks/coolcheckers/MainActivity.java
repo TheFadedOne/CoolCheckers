@@ -28,7 +28,6 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
-    public Menu mMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,42 +51,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.board_menu, menu);
-        mMenu = menu;
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        View gameBoard = findViewById(R.id.board);
-        Drawable standard = getResources().getDrawable(R.drawable.checkerboard);
-        Drawable green = getResources().getDrawable(R.drawable.checkerboardgreen);
-        Drawable ice = getResources().getDrawable(R.drawable.checkerboardice);
-        Drawable ruby = getResources().getDrawable(R.drawable.checkerboardruby);
-
-
-        // Determine which menu option was chosen
-        if (item.getItemId() == R.id.board_stardard) {
-
-            return true;
-        }
-        else if (item.getItemId() == R.id.board_green) {
-            gameBoard.setBackground(green);
-            return true;
-        }
-        else if (item.getItemId() == R.id.board_ice) {
-            gameBoard.setBackground(ice);
-            return true;
-        }
-        else if (item.getItemId() == R.id.board_ruby) {
-            gameBoard.setBackground(ruby);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
