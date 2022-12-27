@@ -27,8 +27,11 @@ public class GameFragment extends Fragment {
     public boolean gameOver;
     public boolean playingBot = false;
     public playerTurn mPlayerTurn;
+
     public int tempX = 0;
     public int tempY = 0;
+    public GamePiece pieceSelected = null;
+    public BoardSpace spaceSelected = null;
     public boolean pieceToMoveSelected = false;
 
     private Button mChangeBoardButton;
@@ -76,6 +79,9 @@ public class GameFragment extends Fragment {
         return parentView;
     }
 
+    /*
+     * Action taken when bot switch is clicked
+     */
     private void onBotToggleClick(View view) {
 
         boolean on = ((Switch)view).isChecked();
@@ -89,6 +95,9 @@ public class GameFragment extends Fragment {
         }
     }
 
+    /*
+     * Action taken when board style randomizer button is clicked
+     */
     private void onChangeBoardClick(View view) {
 
         Random random = new Random();
@@ -139,8 +148,9 @@ public class GameFragment extends Fragment {
     }
 
 
+
     /*
-     * Action taken when button clicked
+     * Action taken when board space button clicked
      */
     private void onBoardSpaceClick(View view) {
 
@@ -148,6 +158,7 @@ public class GameFragment extends Fragment {
         int pieceY;
         int spaceX;
         int spaceY;
+
 
         int buttonIndex = 0;
         for (int i = 0; i < 64; ++i)
@@ -158,15 +169,19 @@ public class GameFragment extends Fragment {
             }
         }
 
+
+
         //if piece has not been selected yet
-        if (pieceToMoveSelected == false)
+        if (getPieceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex)) != null)
         {
             tempX = getXFromButtonIndex(buttonIndex);
             tempY = getYFromButtonIndex(buttonIndex);
+            pieceSelected = getPieceWithPosition(tempX, tempY);
             pieceToMoveSelected = true;
         }
         //if piece has been selected then move
-        else if (pieceToMoveSelected == true)
+        else if (getPieceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex)) == null
+                && mGame.isValidMove(pieceSelected.getColor(), pieceSelected, getBoardSpaceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex))))
         {
             pieceX = tempX;
             pieceY = tempY;
@@ -228,6 +243,7 @@ public class GameFragment extends Fragment {
 
         updateBoardView();
     }
+
 
 
 
