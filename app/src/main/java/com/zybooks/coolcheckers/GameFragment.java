@@ -64,6 +64,7 @@ public class GameFragment extends Fragment {
             mCheckerBoardImageButtons.getChildAt(i).setOnClickListener(this::onBoardSpaceClick);
         }
 
+        //click listener for board changer button
         mChangeBoardButton.setOnClickListener(this:: onChangeBoardClick);
 
         //click listener for bot toggle button
