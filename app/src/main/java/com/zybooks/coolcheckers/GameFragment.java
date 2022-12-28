@@ -181,7 +181,8 @@ public class GameFragment extends Fragment {
         }
         //if piece has been selected then move
         else if (getPieceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex)) == null
-                && mGame.isValidMove(pieceSelected.getColor(), pieceSelected, getBoardSpaceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex))))
+                && mGame.isValidMove(pieceSelected.getColor(), pieceSelected, getBoardSpaceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex)))
+                )
         {
             pieceX = tempX;
             pieceY = tempY;
