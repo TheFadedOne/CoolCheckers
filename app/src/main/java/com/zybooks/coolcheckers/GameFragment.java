@@ -79,6 +79,8 @@ public class GameFragment extends Fragment {
         return parentView;
     }
 
+
+
     /*
      * Action taken when bot switch is clicked
      */
@@ -88,6 +90,12 @@ public class GameFragment extends Fragment {
         if (on)
         {
             playingBot = true;
+            if (mPlayerTurn == playerTurn.BLACK)
+            {
+                movePiece(0, 0, 0, 0);
+                gameOver = checkGameOverState();
+                updateBoardView();
+            }
         }
         else
         {
@@ -169,7 +177,8 @@ public class GameFragment extends Fragment {
             }
         }
 
-
+        pieceColor movingColor;
+        movingColor = (mPlayerTurn == playerTurn.RED) ? pieceColor.RED : pieceColor.BLACK;
 
         //if piece has not been selected yet
         if (getPieceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex)) != null)
@@ -181,7 +190,7 @@ public class GameFragment extends Fragment {
         }
         //if piece has been selected then move
         else if (getPieceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex)) == null
-                && mGame.isValidMove(pieceSelected.getColor(), pieceSelected, getBoardSpaceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex)))
+                && mGame.isValidMove(movingColor, pieceSelected, getBoardSpaceWithPosition(getXFromButtonIndex(buttonIndex), getYFromButtonIndex(buttonIndex)))
                 )
         {
             pieceX = tempX;
@@ -192,6 +201,7 @@ public class GameFragment extends Fragment {
             movePiece(pieceX, pieceY, spaceX, spaceY);
             gameOver = checkGameOverState();
             pieceToMoveSelected = false;
+            pieceSelected = null;
             updateBoardView();
 
 
@@ -286,6 +296,7 @@ public class GameFragment extends Fragment {
 
     public boolean checkGameOverState()
     {
+
         int redRemaining = 0;
         int blackRemaining = 0;
         for (int i = 0; i < 24; ++i)
