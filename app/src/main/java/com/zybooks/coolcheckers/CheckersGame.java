@@ -112,7 +112,7 @@ public class CheckersGame {
     public boolean isValidMove(pieceColor playerMovingColor, GamePiece pieceToMove, BoardSpace spaceToMoveTo)
     {
         //Returns false if the piece position selected is null
-        if (pieceToMove == null)
+        if (pieceToMove == null || spaceToMoveTo == null)
         {
             System.out.println("--- Invalid move --- position selected does not contain an existing piece!");
             return false;

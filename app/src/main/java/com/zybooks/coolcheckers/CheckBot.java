@@ -56,6 +56,7 @@ public class CheckBot {
     }
 
 
+
     /*
      * returns a GamePiece within the mPieces array that corresponds with the
      * coordinates of the button pressed.
@@ -78,6 +79,7 @@ public class CheckBot {
 
         return selectedPiece;
     }
+
 
     /*
      * has similar function to the 'getPieceWithPosition' method, except for Board Spaces

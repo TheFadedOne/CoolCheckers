@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -208,15 +210,22 @@ public class GameFragment extends Fragment {
             //if playing bot, allow bot to move after red player has moved
             if (playingBot == true && gameOver == false)
             {
-                movePiece(0, 0, 0, 0);
-                gameOver = checkGameOverState();
-                updateBoardView();
+                new CountDownTimer(1000, 1000) {
+                    public void onFinish() {
+                        // When timer is finished
+                        movePiece(0, 0, 0, 0);
+                        gameOver = checkGameOverState();
+                        updateBoardView();
+                    }
+
+                    public void onTick(long millisUntilFinished) {
+                        // millisUntilFinished    The amount of time until finished.
+                    }
+                }.start();
+
             }
         }
     }
-
-
-
 
 
     public void movePiece(int pieceX, int pieceY, int spaceX, int spaceY)
@@ -229,14 +238,14 @@ public class GameFragment extends Fragment {
         }
         else if (mPlayerTurn == playerTurn.BLACK)
         {
-            if (playingBot == false)
+            if (!playingBot)
             {
                 mPieces = mGame.move(mPlayerTurn, mPieces, getPieceWithPosition(pieceX, pieceY), getBoardSpaceWithPosition(spaceX, spaceY));
                 mPlayerTurn = (mPlayerTurn == playerTurn.RED) ? playerTurn.BLACK : playerTurn.RED;
                 mTurnText.setText("Turn: RED");
                 mTurnText.setTextColor(Color.RED);
             }
-            else if (playingBot == true)
+            else if (playingBot)
             {
                 //rather than a human inputting a piece and board space, an automated process will input these arguments
 
@@ -293,35 +302,69 @@ public class GameFragment extends Fragment {
     }
 
 
-
     public boolean checkGameOverState()
     {
 
-        int redRemaining = 0;
-        int blackRemaining = 0;
+        int redPossibleMoves = 0;
+        int blackPossibleMoves = 0;
         for (int i = 0; i < 24; ++i)
         {
-            if (mPieces[i].getColor() == pieceColor.RED) {
-                ++redRemaining;
+            if (mPieces[i].getColor() == pieceColor.RED && pieceHasValidMove(mPieces[i])) {
+                ++redPossibleMoves;
             }
-            else if (mPieces[i].getColor() == pieceColor.BLACK) {
-                ++blackRemaining;
+            else if (mPieces[i].getColor() == pieceColor.BLACK && pieceHasValidMove(mPieces[i])) {
+                ++blackPossibleMoves;
             }
         }
 
-        if (blackRemaining < 1)
+        if (blackPossibleMoves < 1)
         {
+            mTurnText.setText("RED WINS!!!");
+            mTurnText.setTextColor(Color.RED);
             Toast.makeText(getContext(), "RED WINS!!!", Toast.LENGTH_SHORT).show();
             return true;
         }
-        else if (redRemaining < 1)
+        else if (redPossibleMoves < 1)
         {
+            mTurnText.setText("BLACK WINS!!!");
+            mTurnText.setTextColor(Color.BLACK);
             Toast.makeText(getContext(), "BLACK WINS!!!", Toast.LENGTH_SHORT).show();
             return true;
         }
 
         return false;
     }
+
+
+    public boolean pieceHasValidMove(GamePiece gamePiece)
+    {
+        BoardSpace boardSpace = new BoardSpace(spaceType.BLACK, 1, 1);
+        for (int i = 0; i < 4; i++)
+        {
+            switch (i)
+            {
+                case 0:
+                    boardSpace = getBoardSpaceWithPosition(gamePiece.getX() + 1, gamePiece.getY() + 1);
+                    break;
+                case 1:
+                    boardSpace = getBoardSpaceWithPosition(gamePiece.getX() + 1, gamePiece.getY() - 1);
+                    break;
+                case 2:
+                    boardSpace = getBoardSpaceWithPosition(gamePiece.getX() - 1, gamePiece.getY() + 1);
+                    break;
+                case 3:
+                    boardSpace = getBoardSpaceWithPosition(gamePiece.getX() - 1, gamePiece.getY() - 1);
+                    break;
+            }
+
+            if (mGame.isValidMove(gamePiece.getColor(), gamePiece, boardSpace))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     /*
      * returns a GamePiece within the mPieces array that corresponds with the
@@ -391,19 +434,5 @@ public class GameFragment extends Fragment {
         return 0;
     }
 
-
-    public int getButtonIndexFromPosition (int x, int y) {
-        x-=1;
-        y-=1;
-        int index = ((y * 8) + x);
-        return index;
-    }
-
-
-    public void setBoardImage(View view){
-
-
-
-    }
 
 }
